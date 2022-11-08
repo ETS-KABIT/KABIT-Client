@@ -17,9 +17,10 @@
         nav button {
             height: 50px;
             width: 160px;
+            overflow:hidden;
             border: none;
             color: #00a2ff;
-            background-color: white;
+            background-color: #ffffff;
             font-size: 20px;
             font-weight: 1000;
         }
@@ -28,50 +29,4 @@
             background-color: #00a2ff;
             transition: 0.5s all;
         }
-        /*
-    .alert1,
-    .alert2 {
-        position: absolute;
-        width: 150px;
-        margin: 10px;
-    }
-    .alert1 {
-        animation: sliding 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s infinite both;
-    }
-    .alert2 {
-        position: absolute;
-        left: 50%;
-        animation: sliding 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
-    }
-    .alert1 img,
-    .alert2 img {
-        width: 150px;
-    }
-    .alert1 p,
-    .alert2 p {
-        width: 150px;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 1000;
-        color: white;
-    }
 }
-
-@keyframes sliding {
-    0% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    70% {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }*/
-    }

@@ -1,32 +1,139 @@
-    * {
-        padding: 0;
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        box-sizing: border-box;
-    }
-    
-    body {
-        background-color: rgb(0, 162, 255);
-    }
-    
-    @media only screen and (max-width: 320px) {
-        nav {
-            display: flex;
-            justify-content: center;
-        }
-        nav button {
-            height: 50px;
-            width: 160px;
-            overflow:hidden;
-            border: none;
-            color: #00a2ff;
-            background-color: #ffffff;
-            font-size: 20px;
-            font-weight: 1000;
-        }
-        nav button:focus {
-            color: white;
-            background-color: #00a2ff;
-            transition: 0.5s all;
-        }
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
+
+body {
+  background-color: #00a2ff;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color:white;
+  border-radius: 0 0 20px 20px ;
+  position: absolute;
+  width: 100%;
+  top:-200px 
+}
+nav button.dropdown{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    background-color: white;
+    border-radius: 0 0 20px 20px ;
+    border: none;
+}
+nav button.dropdown p{
+    margin-top: 15px;
+    font-weight: 1000;
+    color: #00a2ff;
+    font-size: 20px;
+}
+nav button.dropdown img{
+    max-width: 50px;
+    height: 50px;
+    position: absolute;
+    transform: translateY(50px);
+    animation: arrow-jumping 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+}
+@keyframes arrow-jumping {
+    0%{
+        transform: translateY(50px);
+    }
+    50%{
+        transform: translateY(40px);
+    }
+}
+nav menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+
+}
+nav menu button{
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    border: 1px solid #007ABE;
+    background-color: #00A3FF;
+    color: white;
+    font-weight: 800;
+}
+nav menu button:focus{
+    transform: scale(1.1);
+    transition: 0.2s all;
+}
+.slide{
+    animation: slide 0.5s linear forwards ;
+}
+@keyframes slide {
+    0%{
+        position: absolute;
+        top: -200px;    
+    }    
+    100%{
+        position: absolute;
+        top: 0px;    
+    }
+}
+
+.reverse-slide{
+    animation: reverse-slide 0.5s linear forwards ;
+}
+@keyframes reverse-slide {
+    0%{
+        position: absolute;
+        top: 0px;    
+    }
+    100%{
+        position: absolute;
+        top: -200px;    
+    }
+}
+/* Rasveta */
+.rasveta {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  
+  .rasveta-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .rasveta:hover .rasveta-inner {
+    transform: rotateX(180deg);
+  }
+  
+  .rasveta-front, .rasveta-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .rasveta-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .rasveta-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateX(180deg);
+  }

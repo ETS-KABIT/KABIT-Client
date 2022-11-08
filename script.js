@@ -1,6 +1,6 @@
-const kontrolaBtn = document.querySelector("#kontrola").addEventListener('click' , function(e){
+const kontrolaBtn = document.querySelector("#kontrola").addEventListener('click', function(e) {
     //da li treba login ili ne
-    if(true){
+    if (true) {
         var prijavaWindow = document.querySelector('.prijava-window')
         var header = document.querySelector('header')
         var section = document.querySelector('section')

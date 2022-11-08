@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -43,7 +44,8 @@ section {
     animation: apper 1.5s cubic-bezier(0.680, -0.550, 0.265, 1.550) 0.3s both;
 }
 
-section a,section button {
+section a,
+section button {
     padding: 10px 50px 10px 50px;
     text-align: center;
     background-color: white;
@@ -94,21 +96,24 @@ section button:hover {
         opacity: 100px;
     }
 }
-.prijava-window{
-    border:5px solid #00A3FF;
+
+.prijava-window {
+    border: 5px solid #00A3FF;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:space-around;
+    justify-content: space-around;
     position: absolute;
     height: 300px;
     width: 300px;
     border-radius: 20px;
 }
-.animation3{
+
+.animation3 {
     animation: slide-top3 0.5s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
 }
+
 @keyframes slide-top3 {
     0% {
         top: 90%;
@@ -119,35 +124,40 @@ section button:hover {
     100% {
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);        
+        transform: translate(-50%, -50%);
         opacity: 1;
     }
 }
-.prijava-window form{
+
+.prijava-window form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    position: absolute;
 }
-.prijava-window p{
+
+.prijava-window p {
     font-weight: 1000;
     font-size: 32px;
 }
+
 .prijava-window form input[type=text],
-.prijava-window form input[type=password]{
-    margin: 5px;
+.prijava-window form input[type=password] {
+    margin: 10px;
     width: 200px;
     height: 45px;
     text-align: center;
-    border-radius: 20px;
-    border: 1px solid black;
+    border: none;
+    border-bottom: 1px solid black;
 }
+
 ::placeholder {
     font-size: 11px;
     font-weight: 500;
-  }
-  
-.prijava-window form button{
+}
+
+.prijava-window form button {
     width: 150px;
     height: 50px;
     border-radius: 50px;
@@ -157,20 +167,27 @@ section button:hover {
     color: white;
     font-weight: 1000;
     font-size: 15px;
-    cursor: pointer
+    cursor: pointer;
+    position: relative;
+    top: 20px;
 }
 
 .prijava-window form input[type=text]:focus,
-.prijava-window form input[type=password]:focus{
+.prijava-window form input[type=password]:focus {
     outline: none;
+    border: none;
+    border-bottom: 1px solid #00A3FF;
 }
-.bcg-clr{
+
+.bcg-clr {
     background-color: rgba(44, 175, 252, 0.5);
 }
-.opacity{
+
+.opacity {
     filter: blur(2px);
     opacity: 0.8;
 }
-.display-none{
+
+.display-none {
     display: none;
 }

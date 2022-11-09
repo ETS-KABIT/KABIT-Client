@@ -2,9 +2,13 @@
     const dropdownnButton = document.querySelector("#drpdwn-btn").addEventListener('click', function(e) {
         var navigation = document.querySelector("nav")
         var img = document.querySelector("#image")
+        var rasvetaBox = document.querySelector("#rasveta-box")
+
         if (checkStatus) {
             navigation.classList.remove("reverse-slide")
             navigation.classList.add("slide")
+            rasvetaBox.classList.remove("rasveta-apper")
+
             img.setAttribute(
                 'src',
                 '/kontrola/assets/up-arrow.png',
@@ -25,9 +29,18 @@
     const rasveta = document.querySelector("#rasveta").addEventListener('click', function(e) {
         var navigation = document.querySelector("nav")
         var img = document.querySelector("#image")
+        var rasvetaBox = document.querySelector("#rasveta-box")
         console.log(this)
         navigation.classList.remove("slide")
         navigation.classList.add("reverse-slide")
+
+        rasvetaBox.classList.add("rasveta-apper")
+        rasvetaBox.classList.remove("rasveta-disapper")
+        var dropdownnButton = document.querySelector("#drpdwn-btn")
+        dropdownnButton.addEventListener('click', function(e) {
+            rasvetaBox.classList.remove("rasveta-apper")
+            rasvetaBox.classList.add("rasveta-disapper")
+        })
         img.setAttribute(
             'src',
             '/kontrola/assets/down-arrow.png',

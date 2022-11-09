@@ -1,62 +1,67 @@
 * {
-  padding: 0;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #00a2ff;
+    background-color: #00a2ff;
 }
 
 nav {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color:white;
-  border-radius: 0 0 20px 20px ;
-  position: absolute;
-  width: 100%;
-  top:-200px 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    width: 100%;
+    top: -200px
 }
-nav button.dropdown{
+
+nav button.dropdown {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100px;
     background-color: white;
-    border-radius: 0 0 20px 20px ;
+    border-radius: 0 0 20px 20px;
     border: none;
 }
-nav button.dropdown p{
+
+nav button.dropdown p {
     margin-top: 15px;
     font-weight: 1000;
     color: #00a2ff;
     font-size: 20px;
 }
-nav button.dropdown img{
+
+nav button.dropdown img {
     max-width: 50px;
     height: 50px;
     position: absolute;
     transform: translateY(50px);
     animation: arrow-jumping 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
 }
+
 @keyframes arrow-jumping {
-    0%{
+    0% {
         transform: translateY(50px);
     }
-    50%{
+    50% {
         transform: translateY(40px);
     }
 }
+
 nav menu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:center;
-
+    justify-content: center;
 }
-nav menu button{
+
+nav menu button {
     margin: 10px;
     width: 200px;
     height: 50px;
@@ -66,74 +71,142 @@ nav menu button{
     color: white;
     font-weight: 800;
 }
-nav menu button:focus{
+
+nav menu button:focus {
     transform: scale(1.1);
     transition: 0.2s all;
 }
-.slide{
-    animation: slide 0.5s linear forwards ;
+
+.slide {
+    animation: slide 0.5s linear forwards;
 }
+
 @keyframes slide {
-    0%{
+    0% {
         position: absolute;
-        top: -200px;    
-    }    
-    100%{
+        top: -200px;
+    }
+    100% {
         position: absolute;
-        top: 0px;    
+        top: 0px;
     }
 }
 
-.reverse-slide{
-    animation: reverse-slide 0.5s linear forwards ;
+.reverse-slide {
+    animation: reverse-slide 0.5s linear forwards;
 }
+
 @keyframes reverse-slide {
-    0%{
+    0% {
         position: absolute;
-        top: 0px;    
+        top: 0px;
     }
-    100%{
+    100% {
         position: absolute;
-        top: -200px;    
+        top: -200px;
     }
 }
+
+
 /* Rasveta */
+
 .rasveta {
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dnevna-soba,
+.kupatilo,
+.hodnik,
+.stepenice,
+.soba1,
+.soba2 {
     background-color: transparent;
-    width: 300px;
-    height: 300px;
-    perspective: 1000px;
-  }
-  
-  .rasveta-inner {
+    width: 250px;
+    height: 80px;
+    margin: 15px;
+}
+
+.dnevna-soba-inner,
+.kupatilo-inner,
+.hodnik-inner,
+.stepenice-inner,
+.soba1-inner,
+.soba2-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.6s;
+    transition: transform 0.3s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  
-  .rasveta:hover .rasveta-inner {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.dnevna-soba:hover .dnevna-soba-inner,
+.kupatilo:hover .kupatilo-inner,
+.hodnik:hover .hodnik-inner,
+.stepenice:hover .stepenice-inner,
+.soba1:hover .soba1-inner,
+.soba2:hover .soba2-inner {
     transform: rotateX(180deg);
-  }
-  
-  .rasveta-front, .rasveta-back {
+}
+
+.dnevna-soba-front,
+.dnevna-soba-back,
+.kupatilo-front,
+.kupatilo-back,
+.hodnik-front,
+.hodnik-back,
+.stepenice-front,
+.stepenice-back,
+.soba1-front,
+.soba1-back,
+.soba2-front,
+.soba2-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-  }
-  
-  .rasveta-front {
-    background-color: #bbb;
+    font-weight: 1000;
+    border-radius: 20px;
+}
+
+.dnevna-soba-front,
+.kupatilo-front,
+.hodnik-front,
+.stepenice-front,
+.soba1-front,
+.soba2-front {
+    background-color: white;
     color: black;
-  }
-  
-  .rasveta-back {
-    background-color: #2980b9;
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dnevna-soba-back,
+.kupatilo-back,
+.hodnik-back,
+.stepenice-back,
+.soba1-back,
+.soba2-back {
+    background-color: white;
+    color: black;
     transform: rotateX(180deg);
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dnevna-soba-back input[type=range],
+.kupatilo-back input[type=range],
+.hodnik-back input[type=range],
+.stepenice-back input[type=range],
+.soba1-back input[type=range],
+.soba2-back input[type=range] {
+    margin: 10px;
+}

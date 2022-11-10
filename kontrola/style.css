@@ -201,6 +201,15 @@ nav menu button:focus {
     align-items: center;
 }
 
+.dnevna-soba-back p,
+.kupatilo-back p,
+.hodnik-back p,
+.stepenice-back p,
+.soba1-back p,
+.soba2-back p {
+    height: 20px;
+}
+
 .dnevna-soba-back input[type=range],
 .kupatilo-back input[type=range],
 .hodnik-back input[type=range],
@@ -212,11 +221,11 @@ nav menu button:focus {
 
 .rasveta-apper {
     display: flex;
-    margin-top: 200px;
+    margin-top: 150px;
     justify-content: space-around;
     flex-wrap: wrap;
     position: absolute;
-    top: 800px;
+    top: 500px;
     left: 50%;
     transform: translateX(-50%);
     animation: rasveta-apper 0.5s linear forwards;
@@ -225,8 +234,8 @@ nav menu button:focus {
 @keyframes rasveta-apper {
     0% {
         position: absolute;
-        top: 800px;
-        opacity: 0;
+        top: 500px;
+        opacity: 0.5;
     }
     100% {
         position: absolute;
@@ -236,12 +245,11 @@ nav menu button:focus {
 }
 
 .rasveta-disapper {
-    display: flex;
-    margin-top: 200px;
+    margin-top: 150px;
     justify-content: space-around;
     flex-wrap: wrap;
     position: absolute;
-    top: 800px;
+    top: 500px;
     left: 50%;
     transform: translateX(-50%);
     animation: rasveta-disapper 0.5s linear forwards;
@@ -249,14 +257,15 @@ nav menu button:focus {
 
 @keyframes rasveta-disapper {
     0% {
+        display: flex;
+        opacity: 1;
         position: absolute;
         top: 0px;
-        opacity: 1;
     }
     100% {
-        position: absolute;
-        top: 800px;
-        opacity: 0;
+        display: none;
     }
 }
+
+
 /* imapraynog prostora u foteru sajta */

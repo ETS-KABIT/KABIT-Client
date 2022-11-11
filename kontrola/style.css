@@ -18,7 +18,7 @@ nav {
     position: absolute;
     width: 100%;
     top: -200px;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 nav button.dropdown {
@@ -112,8 +112,16 @@ nav menu button:focus {
 /* Rasveta */
 
 .rasveta {
-    display: none;
-    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .dnevna-soba,
@@ -125,7 +133,7 @@ nav menu button:focus {
     background-color: transparent;
     width: 250px;
     height: 80px;
-    margin: 15px;
+    margin: 25px;
 }
 
 .dnevna-soba-inner,
@@ -219,53 +227,165 @@ nav menu button:focus {
     margin: 10px;
 }
 
-.rasveta-apper {
+.grejanje {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.prizemlje,
+.prvi-sprat {
+    background-color: transparent;
+    width: 250px;
+    height: 150px;
+    margin: 25px;
+    padding: 5px;
+}
+
+.prizemlje-inner,
+.prvi-sprat-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.prizemlje:hover .prizemlje-inner,
+.prvi-sprat:hover .prvi-sprat-inner {
+    transform: rotateX(180deg);
+}
+
+.prizemlje-front,
+.prizemlje-back,
+.prvi-sprat-front,
+.prvi-sprat-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    font-weight: 1000;
+    border-radius: 20px;
+}
+
+.prizemlje-front,
+.prvi-sprat-front {
+    background-color: white;
+    color: black;
     display: flex;
-    margin-top: 150px;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    position: absolute;
-    top: 500px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: rasveta-apper 0.5s linear forwards;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes rasveta-apper {
-    0% {
-        position: absolute;
-        top: 500px;
-        opacity: 0.5;
-    }
-    100% {
-        position: absolute;
-        top: 0px;
-        opacity: 1;
-    }
+.prizemlje-front p,
+.prvi-sprat-front p {
+    margin: 10px;
 }
 
-.rasveta-disapper {
-    margin-top: 150px;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    position: absolute;
-    top: 500px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: rasveta-disapper 0.5s linear forwards;
+.prizemlje-front p:nth-child(2),
+.prvi-sprat-front p:nth-child(2) {
+    color: #00a2ff;
+    font-size: 20px;
 }
 
-@keyframes rasveta-disapper {
-    0% {
-        display: flex;
-        opacity: 1;
-        position: absolute;
-        top: 0px;
-    }
-    100% {
-        display: none;
-    }
+.prizemlje-back,
+.prvi-sprat-back {
+    background-color: white;
+    color: black;
+    transform: rotateX(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.prizemlje-back .input,
+.prvi-sprat-back .input {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 200px;
+}
 
-/* imapraynog prostora u foteru sajta */
+.prizemlje-back .input input,
+.prvi-sprat-back .input input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border: none;
+    border-top: 2px solid #00a2ff;
+    border-bottom: 2px solid #00a2ff;
+    text-align: center;
+    font-size: 20px;
+}
+
+.prizemlje-back .input input:focus,
+.prvi-sprat-back .input input:focus {
+    border-top: 2px solid #00a2ff;
+    border-bottom: 2px solid #00a2ff;
+    outline: none;
+}
+
+.prizemlje-back .input button,
+.prvi-sprat-back .input button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 50px;
+    background-color: #00a2ff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+.prizemlje-back .input button:active,
+.prvi-sprat-back .input button:active {
+    background-color: #007ABE;
+}
+
+.prizemlje-back .input .plus,
+.prvi-sprat-back .input .plus {
+    border: none;
+    border-radius: 50px 0 0 50px;
+    border-top: 2px solid #00a2ff;
+    border-left: 2px solid #00a2ff;
+    border-bottom: 2px solid #00a2ff;
+}
+
+.prizemlje-back .input .minus,
+.prvi-sprat-back .input .minus {
+    border: none;
+    border-radius: 0px 50px 50px 0px;
+    border-top: 2px solid #00a2ff;
+    border-right: 2px solid #00a2ff;
+    border-bottom: 2px solid #00a2ff;
+    ;
+}
+
+.display {
+    display: none;
+}
+
+.prizemlje-back input::-webkit-inner-spin-button,
+.prizemlje-back input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.prvi-sprat-back input::-webkit-inner-spin-button,
+.prvi-sprat-back input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

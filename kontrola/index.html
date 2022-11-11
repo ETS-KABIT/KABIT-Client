@@ -21,7 +21,8 @@
             <img id="image" src="/kontrola/assets/down-arrow.png" alt="">
         </button>
     </nav>
-    <div class="rasveta" id="rasveta-box">
+    <div class="rasveta display" id="rasveta-box">
+
         <div class="dnevna-soba container">
             <div class="dnevna-soba-inner">
                 <div class="dnevna-soba-front">
@@ -88,6 +89,46 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="grejanje" id="grejenje-box">
+        <div class="trenutna-temp">
+
+            <div class="prizemlje">
+                <div class="prizemlje-inner">
+                    <div class="prizemlje-front">
+                        <p>Trenutna temperatura prizemlja</p>
+                        <p id="trenutna-temperatura-prizemlje">20°C</p>
+                    </div>
+                    <div class="prizemlje-back">
+                        <p>Unesi temperaturu:</p>
+                        <div class="input">
+                            <button class="plus">+</button>
+                            <input type="number" name="prizemlje" id="prizemlje" max="40" min="10">
+                            <button class="minus">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prvi-sprat">
+                <div class="prvi-sprat-inner">
+                    <div class="prvi-sprat-front">
+                        <p>Trenutna temperatura prvog sprata</p>
+                        <p id="trenutna-temperatura-prvi-sprat">23°C</p>
+                    </div>
+                    <div class="prvi-sprat-back">
+                        <p>Unesi temperaturu:</p>
+                        <div class="input">
+                            <button class="plus">+</button>
+                            <input type="number" name="prvi-sprat" id="prvi-sprat" max="40" min="10">
+                            <button class="minus">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
     <script src="/kontrola/script.js"></script>
 </body>

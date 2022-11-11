@@ -24,49 +24,37 @@ const dropdownnButton = document.querySelector("#drpdwn-btn").addEventListener('
     }
 
 })
-let sttingsWindow = ""
+let settingsWindow = ""
 const rasveta = document.querySelector("#rasveta").addEventListener('click', function(e) {
-    sttingsWindow = "rasveta"
+    settingsWindow = "rasveta"
     var navigation = document.querySelector("nav")
     var img = document.querySelector("#image")
     var rasvetaBox = document.querySelector("#rasveta-box")
+    var dropdownnButton = document.querySelector("#drpdwn-btn")
+
     navigation.classList.remove("slide")
     navigation.classList.add("reverse-slide")
-    console.log(sttingsWindow)
-    rasvetaBox.classList.add("rasveta-apper")
-    rasvetaBox.classList.remove("rasveta-disapper")
-
-    var dropdownnButton = document.querySelector("#drpdwn-btn")
+    rasvetaBox.classList.remove("display")
     dropdownnButton.addEventListener('click', function(e) {
-        rasvetaBox.classList.remove("rasveta-apper")
-        rasvetaBox.classList.add("rasveta-disapper")
-            //namestiti opacity
-        if (sttingsWindow == "rasveta") {
-            rasvetaBox.classList.add("rasveta-apper")
-            rasvetaBox.classList.remove("rasveta-disapper")
+        console.log(checkStatus)
+        if (checkStatus == false) {
+            rasvetaBox.classList.add("display")
         } else {
-            rasvetaBox.classList.remove("rasveta-apper")
-            rasvetaBox.classList.add("rasveta-disapper")
+            rasvetaBox.classList.remove("display")
         }
-        // if (!checkStatus) {
-        //     rasvetaBox.classList.remove("rasveta-apper")
-        //     rasvetaBox.classList.add("rasveta-disapper")
-        // } else {
-        //     rasvetaBox.classList.add("rasveta-apper")
-        //     rasvetaBox.classList.remove("rasveta-disapper")
-        // }
     })
     img.setAttribute(
         'src',
         '/kontrola/assets/down-arrow.png',
     );
     checkStatus = !checkStatus;
+
 })
 
 
 const grejanje = document.querySelector("#grejanje").addEventListener('click', function(e) {
-    sttingsWindow = "grejanje"
-    console.log(sttingsWindow)
+    settingsWindow = "grejanje"
+    console.log(settingsWindow)
     var navigation = document.querySelector("nav")
     var img = document.querySelector("#image")
     navigation.classList.remove("slide")

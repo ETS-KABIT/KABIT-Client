@@ -225,6 +225,7 @@
         margin: 10px;
     }
     /* grejanje */
+    /* trenutna temperatura */
     
     .grejanje {
         display: flex;
@@ -423,6 +424,7 @@
         -webkit-appearance: none;
         margin: 0;
     }
+    /* zakazivanje temperature */
     
     .zakazivanje-prizemlje,
     .zakazivanje-prvi-sprat {
@@ -482,6 +484,11 @@
         align-items: center;
     }
     
+    .prihvati {
+        border: 5px solid green;
+        transition: 0.5s ease-in-out;
+    }
+    
     .display {
         display: none;
     }
@@ -498,9 +505,4 @@
             top: 70%;
             left: 50%;
         }
-    }
-    
-    .prihvati {
-        border: 5px solid green;
-        transition: 0.5s ease-in-out;
     }

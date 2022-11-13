@@ -114,18 +114,18 @@
         .display {
             display: none;
         }
-
+/* 
         @media only screen and (max-width: 1200px) {
             .rasveta {
                 position: absolute;
-                top: 40%;
+                top: 20%;
                 left: 50%;
                 transform: translateX(-50%);
             }
             .grejanje {
                 position: absolute;
-                top: 40%;
+                top: 20%;
                 left: 50%;
                 transform: translateX(-50%);
             }
-        }
+        } */

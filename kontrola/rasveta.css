@@ -1,0 +1,115 @@
+.rasveta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dnevna-soba,
+.kupatilo,
+.hodnik,
+.stepenice,
+.soba1,
+.soba2 {
+    background-color: transparent;
+    width: 250px;
+    height: 80px;
+    margin: 25px;
+}
+
+.dnevna-soba-inner,
+.kupatilo-inner,
+.hodnik-inner,
+.stepenice-inner,
+.soba1-inner,
+.soba2-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.dnevna-soba:hover .dnevna-soba-inner,
+.kupatilo:hover .kupatilo-inner,
+.hodnik:hover .hodnik-inner,
+.stepenice:hover .stepenice-inner,
+.soba1:hover .soba1-inner,
+.soba2:hover .soba2-inner {
+    transform: rotateX(180deg);
+}
+
+.dnevna-soba-front,
+.dnevna-soba-back,
+.kupatilo-front,
+.kupatilo-back,
+.hodnik-front,
+.hodnik-back,
+.stepenice-front,
+.stepenice-back,
+.soba1-front,
+.soba1-back,
+.soba2-front,
+.soba2-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    font-weight: 1000;
+    border-radius: 20px;
+}
+
+.dnevna-soba-front,
+.kupatilo-front,
+.hodnik-front,
+.stepenice-front,
+.soba1-front,
+.soba2-front {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dnevna-soba-back,
+.kupatilo-back,
+.hodnik-back,
+.stepenice-back,
+.soba1-back,
+.soba2-back {
+    background-color: white;
+    color: black;
+    transform: rotateX(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dnevna-soba-back p,
+.kupatilo-back p,
+.hodnik-back p,
+.stepenice-back p,
+.soba1-back p,
+.soba2-back p {
+    height: 20px;
+}
+
+.dnevna-soba-back input[type=range],
+.kupatilo-back input[type=range],
+.hodnik-back input[type=range],
+.stepenice-back input[type=range],
+.soba1-back input[type=range],
+.soba2-back input[type=range] {
+    margin: 10px;
+}

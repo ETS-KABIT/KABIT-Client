@@ -3,7 +3,6 @@
     var img = document.querySelector("#image")
     var rasvetaBox = document.querySelector("#rasveta-box")
     var grejanjeBox = document.querySelector("#grejanje-box")
-
     const dropdownnButton = document.querySelector("#drpdwn-btn").addEventListener('click', function(e) {
         if (checkStatus) {
             navigation.classList.remove("reverse-slide")
@@ -26,6 +25,7 @@
 
     })
     let settingsWindow = ""
+    //rasveta
     const rasveta = document.querySelector("#rasveta").addEventListener('click', function(e) {
         settingsWindow = "rasveta"
         navigation.classList.remove("slide")
@@ -34,6 +34,7 @@
             'src',
             '/kontrola/assets/down-arrow.png',
         );
+
         var dropdownnButton = document.querySelector("#drpdwn-btn")
         rasvetaBox.classList.remove("display")
         grejanjeBox.classList.add("display")
@@ -48,6 +49,7 @@
         checkStatus = !checkStatus;
 
     })
+    //grejanje
     const grejanje = document.querySelector("#grejanje").addEventListener('click', function(e) {
         settingsWindow = "grejanje"
         navigation.classList.remove("slide")
@@ -67,7 +69,6 @@
                     grejanjeBox.classList.add("display")
                 }
             })
-            //input
             //input prizemlje
         var trenutnaInputPrizemlje = document.querySelector("#trenutnaPrizemlje")
         var trenutnaPlusPrizemlje = document.querySelector("#trenutnaPlusPrizemlje")
@@ -120,6 +121,7 @@
             var trenBackPrizemlje = document.querySelector('.trenutna-prizemlje-back')
             trenFrontPrizemlje.style.border = "5px solid green"
             trenBackPrizemlje.style.border = "5px solid green"
+            //slanje trenutne temperature prizelja
             console.log("Zeljena temperatura prizemlja je: ", trenutnaInputPrizemlje.value)
         })
         var ponistiPrizemlje = document.querySelector('#ponisti-prizemlje').addEventListener('click', function() {
@@ -130,7 +132,7 @@
                 trenutnaInputPrizemlje.value = ""
                 trenutnaChoicePrizemlje.classList.add('display')
                 trenutnaChoicePrizemlje.classList.remove('choice-an')
-                console.log("Ponisteno")
+                console.log("Ponistena temperatura prizemlje")
             })
             //input prvi sprat
         var trenutnaInputPrviSprat = document.querySelector("#trenutnaPrviSprat")
@@ -161,7 +163,6 @@
             if (trenutnaInputPrviSprat.value >= 40) {
                 trenutnaPlusPrviSprat.disabled = true;
                 trenutnaInputPrviSprat.value = 40;
-                //ovde se salju podaci za prvi sprat
                 alert('Vrednost ne moze biti veca od 40')
             } else if (trenutnaInputPrviSprat.value <= -10) {
                 trenutnaMinusPrviSprat.disabled = true;
@@ -181,6 +182,7 @@
             var trenBackPrviSprat = document.querySelector('.trenutna-prvi-sprat-back')
             trenFrontPrviSprat.style.border = "5px solid green"
             trenBackPrviSprat.style.border = "5px solid green"
+            //slanje trenutne temperature prvog sprata
             console.log("Zeljena temperatura prvog sprata je:", trenutnaInputPrviSprat.value)
         })
         var ponistiPrviSprat = document.querySelector('#ponisti-prvi-sprat').addEventListener('click', function() {
@@ -191,10 +193,11 @@
             trenutnaInputPrviSprat.value = ""
             trenutnaChoicePrviSprat.classList.add('display')
             trenutnaChoicePrviSprat.classList.remove('choice-an')
-            console.log("Ponisteno")
+            console.log("Ponistena temperatura prvi sprat")
         })
         checkStatus = !checkStatus;
     })
+    //susara
     const susara = document.querySelector("#susara").addEventListener('click', function(e) {
             var navigation = document.querySelector("nav")
             var img = document.querySelector("#image")
@@ -205,29 +208,36 @@
                 '/kontrola/assets/down-arrow.png',
             );
             checkStatus = !checkStatus;
-        })
+    })
+
         //input or change
     const dnevnaSobaSlide = document.querySelector("#dnevna-soba-slide").addEventListener("input", function(e) {
         var dnevnaSoba = document.querySelector("#dnevna-soba")
         dnevnaSoba.innerHTML = this.value + '%'
+        //slanje dnevna soba
     })
     const kupatiloSlide = document.querySelector("#kupatilo-slide").addEventListener("input", function(e) {
         var kupatilo = document.querySelector("#kupatilo")
         kupatilo.innerHTML = this.value + '%'
+        //slanje slide
     })
     const hodnikSlide = document.querySelector("#hodnik-slide").addEventListener("input", function(e) {
         var hodnik = document.querySelector("#hodnik")
         hodnik.innerHTML = this.value + '%'
+        //slanje hodnik
     })
     const stepeniceSlide = document.querySelector("#stepenice-slide").addEventListener("input", function(e) {
         var stepenice = document.querySelector("#stepenice")
         stepenice.innerHTML = this.value + '%'
+        //slanje stepenice
     })
     const soba1Slide = document.querySelector("#soba1-slide").addEventListener("input", function(e) {
         var soba1 = document.querySelector("#soba1")
         soba1.innerHTML = this.value + '%'
+        //slanje soba1
     })
     const soba2Slide = document.querySelector("#soba2-slide").addEventListener("input", function(e) {
         var soba2 = document.querySelector("#soba2")
         soba2.innerHTML = this.value + '%'
+        //slanje soba2
     })

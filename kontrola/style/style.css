@@ -17,8 +17,8 @@
             border-radius: 0 0 20px 20px;
             position: absolute;
             width: 100%;
-            top: -200px;
-            /* z-index: 1; */
+            top: -270px;
+            z-index: 1;
         }
         
         nav button.dropdown {
@@ -85,7 +85,7 @@
         @keyframes slide {
             0% {
                 position: absolute;
-                top: -200px;
+                top: -270px;
             }
             100% {
                 position: absolute;
@@ -104,7 +104,7 @@
             }
             100% {
                 position: absolute;
-                top: -200px;
+                top: -270px;
             }
         }
         /* Rasveta */

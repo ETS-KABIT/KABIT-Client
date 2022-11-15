@@ -17,6 +17,7 @@
         <menu>
             <button id="rasveta">Rasveta</button>
             <button id="grejanje">Grejanje</button>
+            <button id="prozori">Prozori</button>
             <button id="susara">Sušara</button>
         </menu>
         <button class="dropdown" id="drpdwn-btn">
@@ -104,9 +105,9 @@
                     </div>
                     <div class="trenutna-prizemlje-back">
                         <p>Unesi temperaturu:</p>
-                        <div class="trenutna-input">
+                        <div class="input-temp">
                             <button class="minus" id="trenutnaMinusPrizemlje">-</button>
-                            <input type="number" name="prizemlje" id="trenutnaPrizemlje" max="40" min="10">
+                            <input type="number" name="prizemlje" id="trenutnaPrizemlje" max="40" min="10" value="23">
                             <button class="plus" id="trenutnaPlusPrizemlje">+</button>
 
                         </div>
@@ -126,11 +127,10 @@
                     </div>
                     <div class="trenutna-prvi-sprat-back">
                         <p>Unesi temperaturu:</p>
-                        <div class="trenutna-input">
+                        <div class="input-temp">
                             <button class="minus" id="trenutnaMinusPrviSprat">-</button>
-                            <input type="number" name="prvi-sprat" id="trenutnaPrviSprat" max="40" min="10">
+                            <input type="number" name="prvi-sprat" id="trenutnaPrviSprat" max="40" min="10" value="23">
                             <button class="plus" id="trenutnaPlusPrviSprat">+</button>
-
                         </div>
                         <div class="choice display " id="trenutnaChoicePrviSprat">
                             <button id="prihvati-prvi-sprat">Prihvati</button>
@@ -148,22 +148,32 @@
                         <p id="zakazivanje-temperatura-prizemlje">20°C</p>
                     </div>
                     <div class="zakazivanje-prizemlje-back">
-                        <div class="period">
-
+                        <button class="period">
+                                <p>Odaberi period</p>
+                        </button>
+                        <div class="input-temp">
+                            <button class="minus" id="trenutnaMinusPrviSprat">-</button>
+                            <input type="number" name="prvi-sprat" id="trenutnaPrviSprat" max="40" min="10" value="23">
+                            <button class="plus" id="trenutnaPlusPrviSprat">+</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="zakazivanje-prizemlje">
-                <div class="zakazivanje-prizemlje-inner">
-                    <div class="zakazivanje-prizemlje-front">
+            <div class="zakazivanje-prvi-sprat">
+                <div class="zakazivanje-prvi-sprat-inner">
+                    <div class="zakazivanje-prvi-sprat-front">
                         <p>Zakaži temperaturu prizemlja</p>
-                        <p id="zakazivanje-temperatura-prizemlje">20°C</p>
+                        <p id="zakazivanje-temperatura-prvi-sprat">20°C</p>
                     </div>
-                    <div class="zakazivanje-prizemlje-back">
-                        <div class="period">
-
-                        </div>
+                    <div class="zakazivanje-prvi-sprat-back">
+                        <button class="period">
+                            <p>Odaberi period</p>
+                    </button>
+                    <div class="input-temp">
+                        <button class="minus" id="trenutnaMinusPrviSprat">-</button>
+                        <input type="number" name="prvi-sprat" id="trenutnaPrviSprat" max="40" min="10" value="23">
+                        <button class="plus" id="trenutnaPlusPrviSprat">+</button>
+                    </div>
                     </div>
                 </div>
             </div>

@@ -48,6 +48,38 @@
         })
         checkStatus = !checkStatus;
 
+        //input or change
+        var dnevnaSobaSlide = document.querySelector("#dnevna-soba-slide").addEventListener("input", function(e) {
+            var dnevnaSoba = document.querySelector("#dnevna-soba")
+            dnevnaSoba.innerHTML = this.value + '%'
+            //slanje dnevna soba
+        })
+        var kupatiloSlide = document.querySelector("#kupatilo-slide").addEventListener("input", function(e) {
+            var kupatilo = document.querySelector("#kupatilo")
+            kupatilo.innerHTML = this.value + '%'
+            //slanje slide
+        })
+        var hodnikSlide = document.querySelector("#hodnik-slide").addEventListener("input", function(e) {
+            var hodnik = document.querySelector("#hodnik")
+            hodnik.innerHTML = this.value + '%'
+            //slanje hodnik
+        })
+        var stepeniceSlide = document.querySelector("#stepenice-slide").addEventListener("input", function(e) {
+            var stepenice = document.querySelector("#stepenice")
+            stepenice.innerHTML = this.value + '%'
+            //slanje stepenice
+        })
+        var soba1Slide = document.querySelector("#soba1-slide").addEventListener("input", function(e) {
+            var soba1 = document.querySelector("#soba1")
+            soba1.innerHTML = this.value + '%'
+            //slanje soba1
+        })
+        var soba2Slide = document.querySelector("#soba2-slide").addEventListener("input", function(e) {
+            var soba2 = document.querySelector("#soba2")
+            soba2.innerHTML = this.value + '%'
+            //slanje soba2
+        })
+
     })
     //grejanje
     const grejanje = document.querySelector("#grejanje").addEventListener('click', function(e) {
@@ -86,9 +118,9 @@
         })
         trenutnaMinusPrizemlje.addEventListener('click', function() {
             trenutnaInputPrizemlje.value--;
-            if (trenutnaInputPrizemlje.value <= -10) {
+            if (trenutnaInputPrizemlje.value <= 10) {
                 trenutnaMinusPrizemlje.disabled = true;
-                alert('Vrednost ne moze biti manja od -10')
+                alert('Vrednost ne moze biti manja od 10')
             }
             trenutnaInputPrizemlje.innerHTML = trenutnaInputPrizemlje.value
 
@@ -102,10 +134,10 @@
                 trenutnaInputPrizemlje.value = 40;
                 //ovde se salju podaci za prizemlje
                 alert('Vrednost ne moze biti veca od 40')
-            } else if (trenutnaInputPrizemlje.value <= -10) {
+            } else if (trenutnaInputPrizemlje.value <= 10) {
                 trenutnaMinusPrizemlje.disabled = true;
-                trenutnaInputPrizemlje.value = -10
-                alert('Vrednost ne moze biti manja od -10')
+                trenutnaInputPrizemlje.value = 10
+                alert('Vrednost ne moze biti manja od 10')
             }
             if (trenutnaInputPrizemlje.value == '') {
                 trenutnaChoicePrizemlje.classList.add('display')
@@ -151,9 +183,9 @@
         })
         trenutnaMinusPrviSprat.addEventListener('click', function() {
             trenutnaInputPrviSprat.value--;
-            if (trenutnaInputPrviSprat.value <= -10) {
+            if (trenutnaInputPrviSprat.value <= 10) {
                 trenutnaMinusPrviSprat.disabled = true;
-                alert('Vrednost ne moze biti manja od -10')
+                alert('Vrednost ne moze biti manja od 10')
             }
             trenutnaInputPrviSprat.innerHTML = trenutnaInputPrviSprat.value
             trenutnaChoicePrviSprat.classList.remove('display')
@@ -164,10 +196,10 @@
                 trenutnaPlusPrviSprat.disabled = true;
                 trenutnaInputPrviSprat.value = 40;
                 alert('Vrednost ne moze biti veca od 40')
-            } else if (trenutnaInputPrviSprat.value <= -10) {
+            } else if (trenutnaInputPrviSprat.value <= 10) {
                 trenutnaMinusPrviSprat.disabled = true;
-                trenutnaInputPrviSprat.value = -10
-                alert('Vrednost ne moze biti manja od -10')
+                trenutnaInputPrviSprat.value = 10
+                alert('Vrednost ne moze biti manja od 10')
             }
             if (trenutnaInputPrviSprat.value == '') {
                 trenutnaChoicePrviSprat.classList.add('display')
@@ -197,10 +229,22 @@
         })
         checkStatus = !checkStatus;
     })
+        //prozori
+    const prozori = document.querySelector("#prozori").addEventListener('click', function(e) {
+        settingsWindow = "prozori"
+        navigation.classList.remove("slide")
+        navigation.classList.add("reverse-slide")
+        img.setAttribute(
+            'src',
+            '/kontrola/assets/down-arrow.png',
+        );
+        grejanjeBox.classList.add("display")
+        rasvetaBox.classList.add("display")
+        checkStatus = !checkStatus;
+    })
     //susara
     const susara = document.querySelector("#susara").addEventListener('click', function(e) {
-            var navigation = document.querySelector("nav")
-            var img = document.querySelector("#image")
+            settingsWindow = "susara"
             navigation.classList.remove("slide")
             navigation.classList.add("reverse-slide")
             img.setAttribute(
@@ -210,34 +254,3 @@
             checkStatus = !checkStatus;
     })
 
-        //input or change
-    const dnevnaSobaSlide = document.querySelector("#dnevna-soba-slide").addEventListener("input", function(e) {
-        var dnevnaSoba = document.querySelector("#dnevna-soba")
-        dnevnaSoba.innerHTML = this.value + '%'
-        //slanje dnevna soba
-    })
-    const kupatiloSlide = document.querySelector("#kupatilo-slide").addEventListener("input", function(e) {
-        var kupatilo = document.querySelector("#kupatilo")
-        kupatilo.innerHTML = this.value + '%'
-        //slanje slide
-    })
-    const hodnikSlide = document.querySelector("#hodnik-slide").addEventListener("input", function(e) {
-        var hodnik = document.querySelector("#hodnik")
-        hodnik.innerHTML = this.value + '%'
-        //slanje hodnik
-    })
-    const stepeniceSlide = document.querySelector("#stepenice-slide").addEventListener("input", function(e) {
-        var stepenice = document.querySelector("#stepenice")
-        stepenice.innerHTML = this.value + '%'
-        //slanje stepenice
-    })
-    const soba1Slide = document.querySelector("#soba1-slide").addEventListener("input", function(e) {
-        var soba1 = document.querySelector("#soba1")
-        soba1.innerHTML = this.value + '%'
-        //slanje soba1
-    })
-    const soba2Slide = document.querySelector("#soba2-slide").addEventListener("input", function(e) {
-        var soba2 = document.querySelector("#soba2")
-        soba2.innerHTML = this.value + '%'
-        //slanje soba2
-    })

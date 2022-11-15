@@ -114,7 +114,7 @@
         .display {
             display: none;
         }
-/* 
+        
         @media only screen and (max-width: 1200px) {
             .rasveta {
                 position: absolute;
@@ -122,10 +122,13 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
-            .grejanje {
+        }
+        
+        @media only screen and (max-width: 320px) {
+            .rasveta {
                 position: absolute;
                 top: 20%;
                 left: 50%;
                 transform: translateX(-50%);
             }
-        } */
+        }

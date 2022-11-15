@@ -6,9 +6,9 @@
     max-width: 1000px;
     margin: 0 auto;
     position: absolute;
-    top: 65%;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%, -65%);
+    transform: translate(-50%, -40%);
 }
 
 .dnevna-soba,

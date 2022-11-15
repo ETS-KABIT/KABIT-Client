@@ -11,24 +11,14 @@
     transform: translate(-50%, -40%);
 }
 
-.dnevna-soba,
-.kupatilo,
-.hodnik,
-.stepenice,
-.soba1,
-.soba2 {
+.containerR {
     background-color: transparent;
     width: 250px;
     height: 80px;
     margin: 25px;
 }
 
-.dnevna-soba-inner,
-.kupatilo-inner,
-.hodnik-inner,
-.stepenice-inner,
-.soba1-inner,
-.soba2-inner {
+.innerR {
     position: relative;
     width: 100%;
     height: 100%;
@@ -39,27 +29,12 @@
     border-radius: 20px;
 }
 
-.dnevna-soba:hover .dnevna-soba-inner,
-.kupatilo:hover .kupatilo-inner,
-.hodnik:hover .hodnik-inner,
-.stepenice:hover .stepenice-inner,
-.soba1:hover .soba1-inner,
-.soba2:hover .soba2-inner {
+.containerR:hover .innerR {
     transform: rotateX(180deg);
 }
 
-.dnevna-soba-front,
-.dnevna-soba-back,
-.kupatilo-front,
-.kupatilo-back,
-.hodnik-front,
-.hodnik-back,
-.stepenice-front,
-.stepenice-back,
-.soba1-front,
-.soba1-back,
-.soba2-front,
-.soba2-back {
+.frontR,
+.backR {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -68,12 +43,7 @@
     border-radius: 20px;
 }
 
-.dnevna-soba-front,
-.kupatilo-front,
-.hodnik-front,
-.stepenice-front,
-.soba1-front,
-.soba2-front {
+.frontR {
     background-color: white;
     color: black;
     display: flex;
@@ -81,12 +51,7 @@
     align-items: center;
 }
 
-.dnevna-soba-back,
-.kupatilo-back,
-.hodnik-back,
-.stepenice-back,
-.soba1-back,
-.soba2-back {
+.backR {
     background-color: white;
     color: black;
     transform: rotateX(180deg);
@@ -96,20 +61,10 @@
     align-items: center;
 }
 
-.dnevna-soba-back p,
-.kupatilo-back p,
-.hodnik-back p,
-.stepenice-back p,
-.soba1-back p,
-.soba2-back p {
+.backR p {
     height: 20px;
 }
 
-.dnevna-soba-back input[type=range],
-.kupatilo-back input[type=range],
-.hodnik-back input[type=range],
-.stepenice-back input[type=range],
-.soba1-back input[type=range],
-.soba2-back input[type=range] {
+.backR input[type=range] {
     margin: 10px;
 }

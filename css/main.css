@@ -66,118 +66,67 @@ section button:hover {
     transition: 0.2s;
 }
 
-@keyframes slide-top1 {
-    0% {
-        transform: translateY(100px);
-        opacity: 0;
+
+/* Prijava */
+
+@media screen {
+    .prijava-window {
+        border: 5px solid #00A3FF;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        height: 300px;
+        width: 300px;
+        border-radius: 20px;
     }
-    100% {
-        transform: translateY(0px);
-        opacity: 100px;
+    .prijava-window form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
     }
-}
-
-@keyframes slide-top2 {
-    0% {
-        transform: translateY(100px);
-        opacity: 0;
+    .prijava-window p {
+        font-weight: 1000;
+        font-size: 32px;
     }
-    100% {
-        transform: translateY(0px);
-        opacity: 100px;
+    .prijava-window form input[type=text],
+    .prijava-window form input[type=password] {
+        margin: 0;
+        width: 200px;
+        height: 45px;
+        text-align: center;
+        border: none;
+        border-bottom: 1px solid black;
     }
-}
-
-@keyframes apper {
-    0% {
-        opacity: 0;
+     ::placeholder {
+        font-size: 11px;
+        font-weight: 500;
     }
-    100% {
-        opacity: 100px;
+    .prijava-window form button {
+        width: 150px;
+        height: 50px;
+        border-radius: 50px;
+        outline: none;
+        border: none;
+        background-color: black;
+        color: white;
+        font-weight: 1000;
+        font-size: 15px;
+        cursor: pointer;
+        position: relative;
+        top: 20px;
     }
-}
-
-.prijava-window {
-    border: 5px solid #00A3FF;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    height: 300px;
-    width: 300px;
-    border-radius: 20px;
-}
-
-.animation3 {
-    animation: slide-top3 0.5s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
-}
-
-@keyframes slide-top3 {
-    0% {
-        top: 90%;
-        left: 50%;
-        transform: translate(-50%, -90%);
-        opacity: 0;
+    .prijava-window form input[type=text]:focus,
+    .prijava-window form input[type=password]:focus {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #00A3FF;
+        transition: 0.2s;
     }
-    100% {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 1;
-    }
-}
-
-.prijava-window form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-}
-
-.prijava-window p {
-    font-weight: 1000;
-    font-size: 32px;
-}
-
-.prijava-window form input[type=text],
-.prijava-window form input[type=password] {
-    margin: 0;
-    width: 200px;
-    height: 45px;
-    text-align: center;
-    border: none;
-    border-bottom: 1px solid black;
-}
-
-::placeholder {
-    font-size: 11px;
-    font-weight: 500;
-}
-
-.prijava-window form button {
-    width: 150px;
-    height: 50px;
-    border-radius: 50px;
-    outline: none;
-    border: none;
-    background-color: black;
-    color: white;
-    font-weight: 1000;
-    font-size: 15px;
-    cursor: pointer;
-    position: relative;
-    top: 20px;
-}
-
-.prijava-window form input[type=text]:focus,
-.prijava-window form input[type=password]:focus {
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #00A3FF;
-    transition: 0.2s;
 }
 
 .bcg-clr {
@@ -191,4 +140,56 @@ section button:hover {
 
 .display-none {
     display: none;
+}
+
+.animation3 {
+    animation: slide-top3 0.5s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+}
+
+
+/* Animation */
+
+@media screen {
+    @keyframes slide-top1 {
+        0% {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0px);
+            opacity: 100px;
+        }
+    }
+    @keyframes slide-top2 {
+        0% {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0px);
+            opacity: 100px;
+        }
+    }
+    @keyframes apper {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 100px;
+        }
+    }
+    @keyframes slide-top3 {
+        0% {
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -90%);
+            opacity: 0;
+        }
+        100% {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+    }
 }

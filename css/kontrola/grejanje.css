@@ -1,0 +1,263 @@
+.grejanje {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.trenutna-prizemlje,
+.trenutna-prvi-sprat,
+.zakazivanje-prizemlje,
+.zakazivanje-prvi-sprat {
+    margin: 35px;
+}
+
+.trenutna-prizemlje,
+.trenutna-prvi-sprat {
+    background-color: transparent;
+    width: 250px;
+    height: 200px;
+    padding: 5px;
+}
+
+.trenutna-prizemlje-inner,
+.trenutna-prvi-sprat-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.trenutna-prizemlje:hover .trenutna-prizemlje-inner,
+.trenutna-prvi-sprat:hover .trenutna-prvi-sprat-inner {
+    transform: rotateX(180deg);
+}
+
+.trenutna-prizemlje-front,
+.trenutna-prizemlje-back,
+.trenutna-prvi-sprat-front,
+.trenutna-prvi-sprat-back {
+    border: 5px solid transparent;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    font-weight: 1000;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.trenutna-prizemlje-front,
+.trenutna-prvi-sprat-front {
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.trenutna-prizemlje-front p:nth-child(2),
+.trenutna-prvi-sprat-front p:nth-child(2) {
+    color: #00a2ff;
+    font-size: 20px;
+}
+
+.trenutna-prizemlje-back,
+.trenutna-prvi-sprat-back {
+    background-color: white;
+    color: black;
+    transform: rotateX(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    align-items: center;
+}
+
+.trenutna-prizemlje-back .choice,
+.trenutna-prvi-sprat-back .choice {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 120px;
+    opacity: 0;
+    width: 240px;
+    position: absolute;
+}
+
+.trenutna-prizemlje-back .choice button,
+.trenutna-prvi-sprat-back .choice button {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 5px;
+    color: white;
+    background-color: #00a2ff;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+}
+
+.trenutna-prizemlje-back .choice button:active,
+.trenutna-prvi-sprat-back .choice button:active {
+    background-color: #fff;
+    color: #00a2ff;
+}
+
+.choice-an {
+    animation: choice-an 0.3s linear forwards 0.2s;
+}
+
+@keyframes choice-an {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    50% {
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+    }
+    100% {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+.trenutna-prizemlje-back .trenutna-input,
+.trenutna-prvi-sprat-back .trenutna-input {
+    background-color: #00a2ff;
+    border: 1px solid #00a2ff;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.trenutna-prizemlje-back .trenutna-input input,
+.trenutna-prvi-sprat-back .trenutna-input input {
+    background-color: #00a2ff;
+    text-align: center;
+    border: none;
+    font-size: 25px;
+    font-weight: 1000;
+    width: 70px;
+}
+
+.trenutna-prizemlje-back .trenutna-input button,
+.trenutna-prvi-sprat-back .trenutna-input button {
+    font-size: 20px;
+    font-weight: 1000;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: #00a2ff;
+    color: white;
+    border: none;
+}
+
+.trenutna-prizemlje-back .trenutna-input input:focus,
+.trenutna-prvi-sprat-back .trenutna-input input:focus {
+    border-top: 2px solid #00a2ff;
+    border-bottom: 2px solid #00a2ff;
+    outline: none;
+    border: none;
+}
+
+.trenutna-prizemlje-back .trenutna-input button:active,
+.trenutna-prvi-sprat-back .trenutna-input button:active {
+    background-color: white;
+    color: #00a2ff;
+}
+
+.trenutna-prizemlje-back input::-webkit-inner-spin-button,
+.trenutna-prizemlje-back input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.trenutna-prvi-sprat-back input::-webkit-inner-spin-button,
+.trenutna-prvi-sprat-back input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* zakazivanje temperature */
+
+.zakazivanje-prizemlje,
+.zakazivanje-prvi-sprat {
+    background-color: transparent;
+    width: 250px;
+    height: 150px;
+    padding: 5px;
+}
+
+.zakazivanje-prizemlje-inner,
+.zakazivanje-prvi-sprat-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.zakazivanje-prizemlje:hover .zakazivanje-prizemlje-inner,
+.zakazivanje-prvi-sprat:hover .zakazivanje-prvi-sprat-inner {
+    transform: rotateX(180deg);
+}
+
+.zakazivanje-prizemlje-front,
+.zakazivanje-prizemlje-back,
+.zakazivanje-prvi-sprat-front,
+.zakazivanje-prvi-sprat-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    font-weight: 1000;
+    border-radius: 20px;
+}
+
+.zakazivanje-prizemlje-front,
+.zakazivanje-prvi-sprat-front {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.zakazivanje-prizemlje-back,
+.zakazivanje-prvi-sprat-back {
+    background-color: white;
+    color: black;
+    transform: rotateX(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.prihvati {
+    border: 5px solid green;
+    transition: 0.5s ease-in-out;
+}

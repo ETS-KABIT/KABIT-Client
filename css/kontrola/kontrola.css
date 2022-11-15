@@ -1,0 +1,134 @@
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #00a2ff;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            width: 100%;
+            top: -200px;
+            /* z-index: 1; */
+        }
+        
+        nav button.dropdown {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100px;
+            background-color: white;
+            border-radius: 0 0 20px 20px;
+            border: none;
+        }
+        
+        nav button.dropdown p {
+            margin-top: 15px;
+            font-weight: 1000;
+            color: #00a2ff;
+            font-size: 20px;
+        }
+        
+        nav button.dropdown img {
+            max-width: 50px;
+            height: 50px;
+            position: absolute;
+            transform: translateY(50px);
+            animation: arrow-jumping 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+        }
+        
+        @keyframes arrow-jumping {
+            0% {
+                transform: translateY(50px);
+            }
+            50% {
+                transform: translateY(40px);
+            }
+        }
+        
+        nav menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        nav menu button {
+            margin: 10px;
+            width: 200px;
+            height: 50px;
+            border-radius: 20px;
+            border: 1px solid #007ABE;
+            background-color: #00A3FF;
+            color: white;
+            font-weight: 800;
+        }
+        
+        nav menu button:focus {
+            transform: scale(1.1);
+            transition: 0.2s all;
+        }
+        
+        .slide {
+            animation: slide 0.5s linear forwards;
+        }
+        
+        @keyframes slide {
+            0% {
+                position: absolute;
+                top: -200px;
+            }
+            100% {
+                position: absolute;
+                top: 0px;
+            }
+        }
+        
+        .reverse-slide {
+            animation: reverse-slide 0.5s linear forwards;
+        }
+        
+        @keyframes reverse-slide {
+            0% {
+                position: absolute;
+                top: 0px;
+            }
+            100% {
+                position: absolute;
+                top: -200px;
+            }
+        }
+        /* Rasveta */
+        /* grejanje */
+        /* trenutna temperatura */
+        
+        .display {
+            display: none;
+        }
+        
+        @media only screen and (max-width: 1200px) {
+            .rasveta {
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media only screen and (max-width: 320px) {
+            .rasveta {
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }

@@ -46,34 +46,33 @@
                     rasvetaBox.classList.add("display")
                 }
             })
-
-            //input or change
-            var dnevnaSobaSlide = document.querySelector("#dnevna-soba-slide").addEventListener("input", function(e) {
+            var dnevnaSobaSlide = document.querySelector("#dnevna-soba-slide").addEventListener("change", function(e) {
                 var dnevnaSoba = document.querySelector("#dnevna-soba")
                 dnevnaSoba.innerHTML = this.value + '%'
                     //slanje dnevna soba
+
             })
-            var kupatiloSlide = document.querySelector("#kupatilo-slide").addEventListener("input", function(e) {
+            var kupatiloSlide = document.querySelector("#kupatilo-slide").addEventListener("change", function(e) {
                 var kupatilo = document.querySelector("#kupatilo")
                 kupatilo.innerHTML = this.value + '%'
-                    //slanje slide
+                //salanje kupatilo
             })
-            var hodnikSlide = document.querySelector("#hodnik-slide").addEventListener("input", function(e) {
+            var hodnikSlide = document.querySelector("#hodnik-slide").addEventListener("change", function(e) {
                 var hodnik = document.querySelector("#hodnik")
                 hodnik.innerHTML = this.value + '%'
                     //slanje hodnik
             })
-            var stepeniceSlide = document.querySelector("#stepenice-slide").addEventListener("input", function(e) {
+            var stepeniceSlide = document.querySelector("#stepenice-slide").addEventListener("change", function(e) {
                 var stepenice = document.querySelector("#stepenice")
                 stepenice.innerHTML = this.value + '%'
                     //slanje stepenice
             })
-            var soba1Slide = document.querySelector("#soba1-slide").addEventListener("input", function(e) {
+            var soba1Slide = document.querySelector("#soba1-slide").addEventListener("change", function(e) {
                 var soba1 = document.querySelector("#soba1")
                 soba1.innerHTML = this.value + '%'
                     //slanje soba1
             })
-            var soba2Slide = document.querySelector("#soba2-slide").addEventListener("input", function(e) {
+            var soba2Slide = document.querySelector("#soba2-slide").addEventListener("change", function(e) {
                 var soba2 = document.querySelector("#soba2")
                 soba2.innerHTML = this.value + '%'
                     //slanje soba2
@@ -151,23 +150,29 @@
                 }
 
             })
-            var prihvatiPrizemlje = document.querySelector('#prihvati-prizemlje').addEventListener('click', function() {
-                var trenFrontPrizemlje = document.querySelector('.trenutna-prizemlje-front')
-                var trenBackPrizemlje = document.querySelector('.trenutna-prizemlje-back')
-                trenFrontPrizemlje.style.border = "5px solid green"
-                trenBackPrizemlje.style.border = "5px solid green"
-                    //slanje trenutne temperature prizelja
-                console.log("Zeljena temperatura prizemlja je: ", trenutnaInputPrizemlje.value)
+            var prihvatiPrizemlje = document.querySelector('#prihvati-prizemlje').addEventListener('click', function(e) {
+                var inner = this.parentElement.parentElement.parentElement
+                var front = inner.children[0]
+                console.log(inner)
+                console.log(front)
+
+                // var trenFrontPrizemlje = document.querySelector('.trenutna-prizemlje-front');
+                // var trenBackPrizemlje = document.querySelector('.trenutna-prizemlje-back');
+                // trenFrontPrizemlje.style.border = "5px solid green";
+                // trenBackPrizemlje.style.border = "5px solid green";
+                //     //slanje trenutne temperature prizelja
+                // console.log("Zeljena temperatura prizemlja je: ", trenutnaInputPrizemlje.value);
             })
             var ponistiPrizemlje = document.querySelector('#ponisti-prizemlje').addEventListener('click', function() {
-                    var trenFrontPrizemlje = document.querySelector('.trenutna-prizemlje-front')
-                    var trenBackPrizemlje = document.querySelector('.trenutna-prizemlje-back')
-                    trenFrontPrizemlje.style.border = "5px solid transparent"
-                    trenBackPrizemlje.style.border = "5px solid transparent"
-                    trenutnaInputPrizemlje.value = ""
-                    trenutnaChoicePrizemlje.classList.add('display')
-                    trenutnaChoicePrizemlje.classList.remove('choice-an')
-                    console.log("Ponistena temperatura prizemlje")
+                    // var trenFrontPrizemlje = document.querySelector('.trenutna-prizemlje-front')
+                    // var trenBackPrizemlje = document.querySelector('.trenutna-prizemlje-back')
+
+                    // // trenFrontPrizemlje.style.border = "5px solid transparent"
+                    // // trenBackPrizemlje.style.border = "5px solid transparent"
+                    // trenutnaInputPrizemlje.value = ""
+                    // trenutnaChoicePrizemlje.classList.add('display')
+                    // trenutnaChoicePrizemlje.classList.remove('choice-an')
+                    // console.log("Ponistena temperatura prizemlje")
                 })
                 //input prvi sprat
             var trenutnaInputPrviSprat = document.querySelector("#trenutnaPrviSprat")
@@ -215,29 +220,29 @@
                     trenutnaChoicePrviSprat.classList.add('choice-an')
                 }
             })
-            var prihvatiPrviSprat = document.querySelector('#prihvati-prvi-sprat').addEventListener('click', function() {
-                var trenFrontPrviSprat = document.querySelector('.trenutna-prvi-sprat-front')
-                var trenBackPrviSprat = document.querySelector('.trenutna-prvi-sprat-back')
-                trenFrontPrviSprat.style.border = "5px solid green"
-                trenBackPrviSprat.style.border = "5px solid green"
-                    //slanje trenutne temperature prvog sprata
-                console.log("Zeljena temperatura prvog sprata je:", trenutnaInputPrviSprat.value)
+            var prihvatiPrviSprat = document.querySelector('#prihvati-prvi-sprat').addEventListener('click', function(e) {
+                // var trenFrontPrviSprat = document.querySelector('.front')
+                // var trenBackPrviSprat = document.querySelector('.trenutna-prvi-sprat-back')
+                // trenFrontPrviSprat.style.border = "5px solid green"
+                // trenBackPrviSprat.style.border = "5px solid green"
+                //     //slanje trenutne temperature prvog sprata
+                // console.log("Zeljena temperatura prvog sprata je:", trenutnaInputPrviSprat.value)
             })
             var ponistiPrviSprat = document.querySelector('#ponisti-prvi-sprat').addEventListener('click', function() {
-                var trenFrontPrviSprat = document.querySelector('.trenutna-prvi-sprat-front')
-                var trenBackPrviSprat = document.querySelector('.trenutna-prvi-sprat-back')
-                trenFrontPrviSprat.style.border = "5px solid transparent"
-                trenBackPrviSprat.style.border = "5px solid transparent"
-                trenutnaInputPrviSprat.value = ""
-                trenutnaChoicePrviSprat.classList.add('display')
-                trenutnaChoicePrviSprat.classList.remove('choice-an')
-                console.log("Ponistena temperatura prvi sprat")
+                // var trenFrontPrviSprat = document.querySelector('.trenutna-prvi-sprat-front')
+                // var trenBackPrviSprat = document.querySelector('.trenutna-prvi-sprat-back')
+                // trenFrontPrviSprat.style.border = "5px solid transparent"
+                // trenBackPrviSprat.style.border = "5px solid transparent"
+                // trenutnaInputPrviSprat.value = ""
+                // trenutnaChoicePrviSprat.classList.add('display')
+                // trenutnaChoicePrviSprat.classList.remove('choice-an')
+                // console.log("Ponistena temperatura prvi sprat")
             })
             checkStatus = !checkStatus;
         })
-        //prozori
-    const prozori = document.querySelector("#susara").addEventListener('click', function(e) {
-            settingsWindow = "prozori"
+        //ventilacija
+    const ventilacija = document.querySelector("#ventilacija").addEventListener('click', function(e) {
+            settingsWindow = "ventilacija"
             navigation.classList.remove("slide")
             navigation.classList.add("reverse-slide")
             img.setAttribute(

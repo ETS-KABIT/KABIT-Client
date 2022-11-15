@@ -9,10 +9,7 @@
     left: 50%;
     transform: translateX(-50%);
 }
-
-
 /* trenutna temperatura */
-
 @media screen {
     .container {
         background-color: transparent;
@@ -150,20 +147,15 @@
         color: #00a2ff;
     }
 }
-
-
 /* zakazivanje temperature */
-
 @media screen {
-    .zakazivanje-prizemlje,
-    .zakazivanje-prvi-sprat {
+    .containerZ {
         background-color: transparent;
         width: 250px;
         height: 150px;
         padding: 5px;
     }
-    .zakazivanje-prizemlje-inner,
-    .zakazivanje-prvi-sprat-inner {
+    .innerZ {
         position: relative;
         width: 100%;
         height: 100%;
@@ -173,14 +165,11 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         border-radius: 20px;
     }
-    .zakazivanje-prizemlje:hover .zakazivanje-prizemlje-inner,
-    .zakazivanje-prvi-sprat:hover .zakazivanje-prvi-sprat-inner {
+    .containerZ:hover .innerZ {
         transform: rotateX(180deg);
     }
-    .zakazivanje-prizemlje-front,
-    .zakazivanje-prizemlje-back,
-    .zakazivanje-prvi-sprat-front,
-    .zakazivanje-prvi-sprat-back {
+    .frontZ,
+    .backZ {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -188,8 +177,7 @@
         font-weight: 1000;
         border-radius: 20px;
     }
-    .zakazivanje-prizemlje-front,
-    .zakazivanje-prvi-sprat-front {
+    .frontZ {
         background-color: white;
         color: black;
         display: flex;
@@ -197,8 +185,7 @@
         justify-content: center;
         align-items: center;
     }
-    .zakazivanje-prizemlje-back,
-    .zakazivanje-prvi-sprat-back {
+    .backZ {
         background-color: white;
         color: black;
         transform: rotateX(180deg);

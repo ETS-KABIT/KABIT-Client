@@ -103,9 +103,10 @@
                 })
                 //input prizemlje
             var trenutnaInputPrizemlje = document.querySelector("#trenutnaPrizemlje")
-            var trenutnaPlusPrizemlje = document.querySelector("#trenutnaPlusPrizemlje")
-            var trenutnaMinusPrizemlje = document.querySelector("#trenutnaMinusPrizemlje")
-            var trenutnaChoicePrizemlje = document.querySelector("#trenutnaChoicePrizemlje")
+            var trenutnaMinusPrizemlje = trenutnaInputPrizemlje.parentElement.parentElement.children[0]
+            var trenutnaPlusPrizemlje = trenutnaInputPrizemlje.parentElement.parentElement.children[2]
+            var trenutnaChoicePrizemlje = trenutnaInputPrizemlje.parentElement.parentElement.parentElement.children[2]
+            console.log(trenutnaChoicePrizemlje)
             trenutnaPlusPrizemlje.addEventListener('click', function() {
                 if (trenutnaInputPrizemlje.value >= 40) {
                     alert('Vrednost ne moze biti veca od 40')
@@ -151,28 +152,22 @@
 
             })
             var prihvatiPrizemlje = document.querySelector('#prihvati-prizemlje').addEventListener('click', function(e) {
-                var inner = this.parentElement.parentElement.parentElement
-                var front = inner.children[0]
-                console.log(inner)
-                console.log(front)
-
-                // var trenFrontPrizemlje = document.querySelector('.trenutna-prizemlje-front');
-                // var trenBackPrizemlje = document.querySelector('.trenutna-prizemlje-back');
-                // trenFrontPrizemlje.style.border = "5px solid green";
-                // trenBackPrizemlje.style.border = "5px solid green";
-                //     //slanje trenutne temperature prizelja
-                // console.log("Zeljena temperatura prizemlja je: ", trenutnaInputPrizemlje.value);
+                var prizemljeFront = this.parentElement.parentElement.parentElement.children[0]
+                var prizemljeBack = this.parentElement.parentElement.parentElement.children[1]
+                prizemljeFront.style.border = "5px solid green";
+                prizemljeBack.style.border = "5px solid green";
+                    //slanje trenutne temperature prizelja
+                console.log("Zeljena temperatura prizemlja je: ", trenutnaInputPrizemlje.value);
             })
-            var ponistiPrizemlje = document.querySelector('#ponisti-prizemlje').addEventListener('click', function() {
-                    // var trenFrontPrizemlje = document.querySelector('.trenutna-prizemlje-front')
-                    // var trenBackPrizemlje = document.querySelector('.trenutna-prizemlje-back')
-
-                    // // trenFrontPrizemlje.style.border = "5px solid transparent"
-                    // // trenBackPrizemlje.style.border = "5px solid transparent"
-                    // trenutnaInputPrizemlje.value = ""
-                    // trenutnaChoicePrizemlje.classList.add('display')
-                    // trenutnaChoicePrizemlje.classList.remove('choice-an')
-                    // console.log("Ponistena temperatura prizemlje")
+            var ponistiPrizemlje = document.querySelector('#ponisti-prizemlje').addEventListener('click', function(E) {
+                var prizemljeFront = this.parentElement.parentElement.parentElement.children[0]
+                var prizemljeBack = this.parentElement.parentElement.parentElement.children[1]
+                prizemljeFront.style.border = "5px solid transparent"
+                prizemljeBack.style.border = "5px solid transparent"
+                    trenutnaInputPrizemlje.value = ""
+                    trenutnaChoicePrizemlje.classList.add('display')
+                    trenutnaChoicePrizemlje.classList.remove('choice-an')
+                    console.log("Ponistena temperatura prizemlje")
                 })
                 //input prvi sprat
             var trenutnaInputPrviSprat = document.querySelector("#trenutnaPrviSprat")
@@ -221,22 +216,22 @@
                 }
             })
             var prihvatiPrviSprat = document.querySelector('#prihvati-prvi-sprat').addEventListener('click', function(e) {
-                // var trenFrontPrviSprat = document.querySelector('.front')
-                // var trenBackPrviSprat = document.querySelector('.trenutna-prvi-sprat-back')
-                // trenFrontPrviSprat.style.border = "5px solid green"
-                // trenBackPrviSprat.style.border = "5px solid green"
-                //     //slanje trenutne temperature prvog sprata
-                // console.log("Zeljena temperatura prvog sprata je:", trenutnaInputPrviSprat.value)
+                var prviSpratFront = this.parentElement.parentElement.parentElement.children[0]
+                var prviSpratBack = this.parentElement.parentElement.parentElement.children[1]
+                prviSpratFront.style.border = "5px solid green"
+                prviSpratBack.style.border = "5px solid green"
+                //slanje trenutne temperature prvog sprata
+                console.log("Zeljena temperatura prvog sprata je:", trenutnaInputPrviSprat.value)
             })
             var ponistiPrviSprat = document.querySelector('#ponisti-prvi-sprat').addEventListener('click', function() {
-                // var trenFrontPrviSprat = document.querySelector('.trenutna-prvi-sprat-front')
-                // var trenBackPrviSprat = document.querySelector('.trenutna-prvi-sprat-back')
-                // trenFrontPrviSprat.style.border = "5px solid transparent"
-                // trenBackPrviSprat.style.border = "5px solid transparent"
-                // trenutnaInputPrviSprat.value = ""
-                // trenutnaChoicePrviSprat.classList.add('display')
-                // trenutnaChoicePrviSprat.classList.remove('choice-an')
-                // console.log("Ponistena temperatura prvi sprat")
+                var prviSpratFront = this.parentElement.parentElement.parentElement.children[0]
+                var prviSpratBack = this.parentElement.parentElement.parentElement.children[1]
+                prviSpratFront.style.border = "5px solid transparent"
+                prviSpratBack.style.border = "5px solid transparent"
+                trenutnaInputPrviSprat.value = ""
+                trenutnaChoicePrviSprat.classList.add('display')
+                trenutnaChoicePrviSprat.classList.remove('choice-an')
+                console.log("Ponistena temperatura prvi sprat")
             })
             checkStatus = !checkStatus;
         })

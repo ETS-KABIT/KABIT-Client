@@ -68,3 +68,7 @@
 .backR input[type=range] {
     margin: 10px;
 }
+
+.display {
+    display: none;
+}

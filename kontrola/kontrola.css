@@ -17,7 +17,7 @@
             border-radius: 0 0 20px 20px;
             position: absolute;
             width: 100%;
-            top: -270px;
+            top: -280px;
             z-index: 1;
         }
         
@@ -85,7 +85,7 @@
         @keyframes slide {
             0% {
                 position: absolute;
-                top: -270px;
+                top: -280px;
             }
             100% {
                 position: absolute;
@@ -104,7 +104,7 @@
             }
             100% {
                 position: absolute;
-                top: -270px;
+                top: -280px;
             }
         }
         /* Rasveta */
@@ -122,6 +122,11 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+            .containerZ {
+                background-color: transparent;
+                width: 300px;
+                height: 200px;
+            }
         }
         
         @media only screen and (max-width: 320px) {
@@ -130,5 +135,10 @@
                 top: 20%;
                 left: 50%;
                 transform: translateX(-50%);
+            }
+            .containerZ {
+                background-color: transparent;
+                width: 300px;
+                height: 200px;
             }
         }

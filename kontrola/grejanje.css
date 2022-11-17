@@ -272,10 +272,10 @@
     }
     .period-input-prizemlje {
         position: fixed;
-        top: 100%;
+        top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 1;
-        transform: translate(-50%, -100%);
         width: 300px;
         height: 300px;
         background-color: white;
@@ -286,6 +286,13 @@
         justify-content: space-evenly;
         align-items: center;
         text-align: center;
+    }
+    .back-cover{
+        background-color: rgba(44, 175, 252, 0.5);        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 1;
     }
     .period-input-prizemlje p {
         margin: 20px;
@@ -344,10 +351,6 @@
     display: none;
 }
 
-.bcg-clr {
-    background-color: rgba(44, 175, 252, 0.5);
-}
-
 @media only screen and (max-width: 1200px) {
     .period-input-prizemlje {
         position: fixed;
@@ -370,7 +373,7 @@
         position: fixed;
         top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 1;
-        transform: translate(-50%, -100%);
     }
 }

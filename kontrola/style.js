@@ -140,14 +140,11 @@
             var period = document.querySelectorAll(".period");
             for (var i = 0; i < period.length; i++) {
                 period[i].addEventListener("click", function(e) {
-                    var body = document.querySelector("body")
-                    var input = this.nextElementSibling
-                    var periodInputPrizemlje = this.parentElement.parentElement.parentElement.parentElement.parentElement.children[2]
-                    var card = this.parentElement
-                    console.log(card)
-                    card.click();
-                    periodInputPrizemlje.classList.remove('display')
-                    body.classList.add("bcg-clr");
+                    var backCover = document.querySelector(".back-cover")
+                    var periodInputPrizemlje = document.querySelector(".period-input-prizemlje")
+                    console.log(periodInputPrizemlje)
+                    periodInputPrizemlje.classList.remove("display")
+                    backCover.classList.remove("display")
                 })
             }
 

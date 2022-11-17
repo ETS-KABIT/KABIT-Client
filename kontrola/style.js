@@ -50,7 +50,10 @@
             for (var i = 0; i < input.length; i++) {
                 input[i].addEventListener("change", function(e) {
                     var paragraph = this.parentElement.previousElementSibling
+                    var form = this.parentElement
+                    console.log(form)
                     paragraph.innerHTML = this.value + "%"
+                    form.submit()
                 })
             }
             checkStatus = !checkStatus;
@@ -137,11 +140,14 @@
             var period = document.querySelectorAll(".period");
             for (var i = 0; i < period.length; i++) {
                 period[i].addEventListener("click", function(e) {
+                    var body = document.querySelector("body")
                     var input = this.nextElementSibling
                     var periodInputPrizemlje = this.parentElement.parentElement.parentElement.parentElement.parentElement.children[2]
-                    console.log(periodInputPrizemlje)
-                    input.classList.remove('display')
+                    var card = this.parentElement
+                    console.log(card)
+                    card.click();
                     periodInputPrizemlje.classList.remove('display')
+                    body.classList.add("bcg-clr");
                 })
             }
 

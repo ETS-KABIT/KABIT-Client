@@ -196,6 +196,9 @@
                             <button class="ponisti">Ponisti</button>
                         </div>
                     </div>
+                    <div class="outside-input">
+                    TEST TEST TEST    
+                    </div>
                 </div>
             </div>
         </div>
@@ -203,11 +206,16 @@
     <div class="back-cover display"></div>
     <div class="period-input-prizemlje display">
             <p>Odaberite period</p>
-            <form action="/kontrola/period-input-prizemlje" method="post">
-                <input type="datetime-local" name="" id="">
-                <input type="datetime-local" name="" id="">
-                <button>Primeni</button>
-            </form>
+                <div class="input-box">
+                    <label for="start">Od:</label>
+                <input type="datetime-local" name="start" id="start">
+                </div>
+                <div class="input-box">
+                    <label for="end">Do:</label>
+                    <input type="datetime-local" name="end" id="end">
+                </div>
+                
+                <button class="primeniZ">Primeni</button>
     </div>
     <script src="/kontrola/style.js"></script>
 </body>

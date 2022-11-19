@@ -140,12 +140,23 @@
             var period = document.querySelectorAll(".period");
             for (var i = 0; i < period.length; i++) {
                 period[i].addEventListener("click", function(e) {
-                    var backCover = document.querySelector(".back-cover")
-                    var periodInputPrizemlje = document.querySelector(".period-input-prizemlje")
-                    console.log(periodInputPrizemlje)
+                    var backCover = this.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling
+                    var periodInputPrizemlje = backCover.nextElementSibling
                     periodInputPrizemlje.classList.remove("display")
                     backCover.classList.remove("display")
                 })
+            }
+
+            var primeniZ = document.querySelectorAll(".primeniZ");
+            for (var i = 0; i < primeniZ.length; i++) {
+                primeniZ[i].addEventListener("click", function(e) {
+                    console.log(this)
+                    var backCover = document.querySelector(".back-cover")
+                    var periodInputPrizemlje = document.querySelector(".period-input-prizemlje")
+                    periodInputPrizemlje.classList.remove("display")
+                    backCover.classList.remove("display")
+                    console.log(this)
+                    })
             }
 
         })

@@ -277,13 +277,13 @@
         transform: translate(-50%, -50%);
         z-index: 1;
         width: 300px;
-        height: 300px;
+        height: 320px;
         background-color: white;
-        border: 5px solid #00a2ff;
+        border: 5px solid #0086d3;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content:space-evenly;
         align-items: center;
         text-align: center;
     }
@@ -308,12 +308,17 @@
         align-items: center;
     }
     .period-input-prizemlje form input {
-        padding: 20px;
+        padding: 15px;
         border-radius: 50px;
         margin: 10px;
         background-color: #00a2ff;
         color: #fff;
         border: none;
+    }
+    .period-input-prizemlje form .input-box {
+
+        font-size: 15px;
+        font-weight: 800;
     }
     .period-input-prizemlje form button {
         padding: 15px 60px;
@@ -376,4 +381,9 @@
         transform: translate(-50%, -50%);
         z-index: 1;
     }
+}
+.outside-input{
+    position: fixed;
+    top: 50%;
+    left:50%;
 }

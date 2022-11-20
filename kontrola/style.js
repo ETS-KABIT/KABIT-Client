@@ -192,7 +192,7 @@
                     var boxPeriod = this.parentElement
                     const timeDate = new Date().toJSON();
                     if (this.value == "prizemlje") {
-                        var ineerPrizemlje = this.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.children[1].firstElementChild.firstElementChild
+                        var ineerPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje").parentElement.parentElement
                         ineerPrizemlje.classList.add("active")
                         if (inputStart <= timeDate || inputEnd <= inputStart) {
                             alert("Pogresan unos")
@@ -206,13 +206,12 @@
                             this.parentElement.previousElementSibling.classList.add("display")
                         }
                     } else {
-                        var ineerPrviSprat = this.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[1].children[1].firstElementChild
+                        var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
                         ineerPrviSprat.classList.add("active")
                         if (inputStart <= timeDate || inputEnd <= inputStart) {
                             alert("Pogresan unos")
                             ineerPrviSprat.classList.add("active")
                         } else {
-                            ineerPrviSprat.classList.add("active")
                             ineerPrviSprat.classList.add("active")
                             console.log("poslato prvi sprat")
                             inputTempPrviSprat.classList.remove("display")
@@ -232,8 +231,25 @@
                     var endVremePrviSprat = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.children[2].firstElementChild.nextElementSibling.children[1].value
 
                     if (this.value == "prizemlje") {
-                        var formTempPrizemlje = this.parentElement.previousElementSibling.children[1]
+                        var ineerPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje").parentElement.parentElement
+                        ineerPrizemlje.classList.remove("active")
+
+                        var formTempPrizemlje = document.querySelector("#zakazivanjePrizemljaTemp").parentElement
+                        var formPeriodPrizemlje = document.querySelector("#startP").parentElement.parentElement
                         console.log(formTempPrizemlje)
+                        console.log(formPeriodPrizemlje)
+                        formTempPrizemlje.submit()
+                        formPeriodPrizemlje.submit()
+                    } else {
+                        var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
+                        ineerPrviSprat.classList.remove("active")
+
+                        var formTempPrviSprat = document.querySelector("#zakazivanjePrviSpratTemp").parentElement
+                        var formPeriodPrviSprat = document.querySelector("#startPS").parentElement.parentElement
+                        console.log(formTempPrviSprat)
+                        console.log(formPeriodPrviSprat)
+                        formTempPrviSprat.submit()
+                        formPeriodPrviSprat.submit()
                     }
                 })
             }

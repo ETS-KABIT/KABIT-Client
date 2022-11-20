@@ -165,7 +165,7 @@
                         <div class="input display" id="zakazivanjePrizemlja">
                             <button class="minus">-</button>
                             <form action="/kontrola/zakazivanje-prizemlja-temp" method="post">
-                                <input type="number" name="prizemlje" id="zakazivanjePrizemlja1" max="40" min="10" value="10" required>
+                                <input type="number" name="prizemlje" id="zakazivanjePrizemljaTemp" max="40" min="10" value="10" required>
                             </form>
                             <button class="plus">+</button>
                         </div>
@@ -190,7 +190,7 @@
                         <div class="input display" id="zakazivanjePrviSprat">
                             <button class="minus">-</button>
                             <form action="/kontrola/zakazivanje-prvi-sprat-temp" method="post">
-                                <input type="number" name="prvi-sprat" id="zakazivanjePrviSprat1" max="40" min="10" value="10" required>
+                                <input type="number" name="prvi-sprat" id="zakazivanjePrviSpratTemp" max="40" min="10" value="10" required>
                             </form>
                             <button class="plus">+</button>
                         </div>
@@ -219,11 +219,11 @@
         <form action="/kontrola/zakazivanje-prizemlje-period" method="post">
             <div class="input-box">
                 <label for="start">Od:</label>
-                <input type="datetime-local" name="start" id="start">
+                <input type="datetime-local" name="start" id="startP">
             </div>
             <div class="input-box">
                 <label for="end">Do:</label>
-                <input type="datetime-local" name="end" id="end">
+                <input type="datetime-local" name="end" id="endP">
             </div>
         </form>
         <button class="primeniZ" value="prizemlje">Primeni</button>
@@ -235,11 +235,11 @@
         <form action="/kontrola/zakazivanje-prvi-sprat-period" method="post">
             <div class="input-box">
                 <label for="start">Od:</label>
-                <input type="datetime-local" name="start" id="start">
+                <input type="datetime-local" name="start" id="startPS">
             </div>
             <div class="input-box">
                 <label for="end">Do:</label>
-                <input type="datetime-local" name="end" id="end">
+                <input type="datetime-local" name="end" id="endPS">
             </div>
         </form>
         <button class="primeniZ">Primeni</button>

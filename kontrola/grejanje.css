@@ -186,6 +186,7 @@
         backface-visibility: hidden;
         font-weight: 1000;
         border-radius: 20px;
+        padding: 50px;
     }
     .frontZ {
         background-color: white;
@@ -336,7 +337,7 @@
         font-size: 15px;
         font-weight: 800;
     }
-    .periodi form button {
+    .periodi button.primeniZ {
         padding: 15px 60px;
         border-radius: 20px;
         border: none;
@@ -391,7 +392,7 @@
         background-color: transparent;
         width: 290px;
         height: 200px;
-        padding: 0px;
+        padding: 5px;
         margin: 10px;
     }
     .periodi {

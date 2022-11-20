@@ -17,7 +17,7 @@
             border-radius: 0 0 20px 20px;
             position: absolute;
             width: 100%;
-            top: -280px;
+            top: -200px;
             z-index: 1;
         }
         
@@ -79,13 +79,13 @@
         }
         
         .slide {
-            animation: slide 0.5s linear forwards;
+            animation: slide 0.2s linear forwards;
         }
         
         @keyframes slide {
             0% {
                 position: absolute;
-                top: -280px;
+                top: -200px;
             }
             100% {
                 position: absolute;
@@ -94,7 +94,7 @@
         }
         
         .reverse-slide {
-            animation: reverse-slide 0.5s linear forwards;
+            animation: reverse-slide 0.2s linear forwards;
         }
         
         @keyframes reverse-slide {
@@ -104,7 +104,7 @@
             }
             100% {
                 position: absolute;
-                top: -280px;
+                top: -200px;
             }
         }
         /* Rasveta */

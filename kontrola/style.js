@@ -118,6 +118,7 @@
                     var back = this.parentElement.parentElement
                     var input = this.parentElement.previousElementSibling.children[1].firstElementChild
                     var form = input.parentElement
+                    console.log(form)
                     form.submit()
                     front.style.border = "5px solid green";
                     back.style.border = "5px solid green";
@@ -144,13 +145,17 @@
             var period = document.querySelectorAll(".period");
             for (var i = 0; i < period.length; i++) {
                 period[i].addEventListener("click", function(e) {
-                    var backCover = this.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling
+                    var backCover = this.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling
                     if (this.value == "prizemlje") {
-                        var boxPrizemlje = this.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling
+                        var boxPrizemlje = this.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling
+                            // console.log(boxPrizemlje)
+                            // console.log(backCover)
                         boxPrizemlje.classList.remove('display')
                         backCover.classList.remove('display')
                     } else {
-                        var boxPrviSprat = this.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling
+                        var boxPrviSprat = this.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+                            // console.log(boxPrviSprat)
+                            // console.log(backCover)
                         boxPrviSprat.classList.remove('display')
                         backCover.classList.remove('display')
                     }
@@ -176,67 +181,91 @@
             var primeniZ = document.querySelectorAll(".primeniZ");
             for (var i = 0; i < primeniZ.length; i++) {
                 primeniZ[i].addEventListener("click", function(e) {
-                    var inputFrom = this.previousElementSibling.previousElementSibling.children[1].value
-                    var inputTo = this.previousElementSibling.children[1].value
+                    var inputStart = this.previousElementSibling.firstElementChild.children[1].value
+                    var inputEnd = this.previousElementSibling.firstElementChild.nextElementSibling.children[1].value
                     var inputTempPrizemlje = document.querySelector("#zakazivanjePrizemlja")
                     var inputTempPrviSprat = document.querySelector("#zakazivanjePrviSprat")
-                    var box = this.parentElement
+
+                    var formTempPrizemlje = inputTempPrizemlje.firstElementChild.nextElementSibling
+                    var formTempPrviSprat = inputTempPrviSprat.firstElementChild.nextElementSibling
+
+                    var boxPeriod = this.parentElement
                     const timeDate = new Date().toJSON();
                     if (this.value == "prizemlje") {
-                        if (inputFrom <= timeDate || inputTo <= inputFrom) {
+                        var ineerPrizemlje = this.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.children[1].firstElementChild.firstElementChild
+                        ineerPrizemlje.classList.add("active")
+                        if (inputStart <= timeDate || inputEnd <= inputStart) {
                             alert("Pogresan unos")
+                            ineerPrizemlje.classList.add("active")
                         } else {
+                            ineerPrizemlje.classList.add("active")
+                            console.log(ineerPrizemlje)
                             console.log("poslato prizemlje")
-                            inputTempPrizemlje.classList.add("display")
-                            box.classList.add("display")
+                            inputTempPrizemlje.classList.remove("display")
+                            boxPeriod.classList.add("display")
                             this.parentElement.previousElementSibling.classList.add("display")
-
                         }
                     } else {
-                        if (inputFrom <= timeDate || inputTo <= inputFrom) {
+                        var ineerPrviSprat = this.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[1].children[1].firstElementChild
+                        ineerPrviSprat.classList.add("active")
+                        if (inputStart <= timeDate || inputEnd <= inputStart) {
                             alert("Pogresan unos")
+                            ineerPrviSprat.classList.add("active")
                         } else {
+                            ineerPrviSprat.classList.add("active")
+                            ineerPrviSprat.classList.add("active")
                             console.log("poslato prvi sprat")
-                            inputTempPrviSprat.classList.add("display")
-                            box.classList.add("display")
+                            inputTempPrviSprat.classList.remove("display")
+                            boxPeriod.classList.add("display")
                             this.parentElement.previousElementSibling.previousElementSibling.classList.add("display")
                         }
                     }
+                })
+            }
+            var prihvatiZ = document.querySelectorAll(".prihvatiZ");
+            for (var i = 0; i < prihvatiZ.length; i++) {
+                prihvatiZ[i].addEventListener("click", function(e) {
+                    var startVremePrizemlje = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[2].firstElementChild.children[1].value
+                    var endVremePrizemlje = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[2].firstElementChild.nextElementSibling.children[1].value
+
+                    var startVremePrviSprat = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.children[2].firstElementChild.children[1].value
+                    var endVremePrviSprat = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.children[2].firstElementChild.nextElementSibling.children[1].value
+
+                    if (this.value == "prizemlje") {
+                        var formTempPrizemlje = this.parentElement.previousElementSibling.children[1]
+                        console.log(formTempPrizemlje)
+                    }
+                })
+            }
+            var ponistiZ = document.querySelectorAll(".ponistiZ");
+            for (var i = 0; i < prihvati.length; i++) {
+                ponistiZ[i].addEventListener("click", function(e) {
+                    console.log(this)
+
                 })
             }
             checkStatus = !checkStatus;
         })
         //ventilacija
     const ventilacija = document.querySelector("#ventilacija").addEventListener('click', function(e) {
-            settingsWindow = "ventilacija"
-            navigation.classList.remove("slide")
-            navigation.classList.add("reverse-slide")
-            img.setAttribute(
-                'src',
-                '/assets/kontrola/down-arrow.png',
-            );
-
-            var dropdownnButton = document.querySelector("#drpdwn-btn")
-            rasvetaBox.classList.add("display")
-            grejanjeBox.classList.add("display")
-            ventilacijaBox.classList.remove("display")
-            dropdownnButton.addEventListener('click', function(e) {
-                if (checkStatus == true && settingsWindow == "ventilacija") {
-                    ventilacijaBox.classList.remove("display")
-                } else {
-                    ventilacijaBox.classList.add("display")
-                }
-            })
-
-        })
-        //susara
-    const susara = document.querySelector("#susara").addEventListener('click', function(e) {
-        settingsWindow = "susara"
+        settingsWindow = "ventilacija"
         navigation.classList.remove("slide")
         navigation.classList.add("reverse-slide")
         img.setAttribute(
             'src',
             '/assets/kontrola/down-arrow.png',
         );
-        checkStatus = !checkStatus;
+
+        var dropdownnButton = document.querySelector("#drpdwn-btn")
+        rasvetaBox.classList.add("display")
+        grejanjeBox.classList.add("display")
+        ventilacijaBox.classList.remove("display")
+        dropdownnButton.addEventListener('click', function(e) {
+            if (checkStatus == true && settingsWindow == "ventilacija") {
+                ventilacijaBox.classList.remove("display")
+            } else {
+                ventilacijaBox.classList.add("display")
+            }
+        })
+
     })

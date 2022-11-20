@@ -17,7 +17,6 @@
             <button id="rasveta">Rasveta</button>
             <button id="grejanje">Grejanje</button>
             <button id="ventilacija">Ventilacija</button>
-            <button id="susara">Sušara</button>
         </menu>
         <button class="dropdown" id="drpdwn-btn">
           <p>Odaberi podešavanja</p>
@@ -33,7 +32,7 @@
                 <div class="backR">
                     <p></p>
                     <form action="/kontrola/dnevna-soba" method="post">
-                        <input type="range" name="" id="">
+                        <input type="range" name="dnevna-soba" id="dnevna-soba">
                     </form>
                 </div>
             </div>
@@ -46,7 +45,7 @@
                 <div class="backR">
                     <p></p>
                     <form action="/kontrola/kupatlo" method="post">
-                        <input type="range" name="" id="">
+                        <input type="range" name="kupatlo" id="kupatlo">
                     </form>
                 </div>
             </div>
@@ -59,7 +58,7 @@
                 <div class="backR">
                     <p></p>
                     <form action="/kontrola/hodnik" method="post">
-                        <input type="range" name="" id="">
+                        <input type="range" name="hodnik" id="hodnik">
                     </form>
                 </div>
             </div>
@@ -72,7 +71,7 @@
                 <div class="backR">
                     <p></p>
                     <form action="/kontrola/stepenice" method="post">
-                        <input type="range" name="" id="">
+                        <input type="range" name="stepenice" id="stepenice">
                     </form>
                 </div>
             </div>
@@ -85,7 +84,7 @@
                 <div class="backR">
                     <p></p>
                     <form action="/kontrola/soba-1" method="post">
-                        <input type="range" name="" id="">
+                        <input type="range" name="soba-1" id="soba-1">
                     </form>
                 </div>
             </div>
@@ -98,7 +97,7 @@
                 <div class="backR">
                     <p></p>
                     <form action="/kontrola/soba-2" method="post">
-                        <input type="range" name="" id="">
+                        <input type="range" name="soba-2" id="soba-2">
                     </form>
                 </div>
             </div>
@@ -139,7 +138,8 @@
                         <p>Unesi temperaturu:</p>
                         <div class="input">
                             <button class="minus">-</button>
-                            <form action="/kontrola/trenutna-prvi-sprat" method="post"> <input type="number" name="prvi-sprat" id="trenutnaPrviSprat" max="40" min="10" value="10">
+                            <form action="/kontrola/trenutna-prvi-sprat" method="post">
+                                <input type="number" name="prvi-sprat" id="trenutnaPrviSprat" max="40" min="10" value="10">
                             </form>
                             <button class="plus">+</button>
                         </div>
@@ -164,14 +164,15 @@
                         </button>
                         <div class="input display" id="zakazivanjePrizemlja">
                             <button class="minus">-</button>
-                            <form action="/kontrola/zakazivanje-prizemlja" method="post">
+                            <form action="/kontrola/zakazivanje-prizemlja-temp" method="post">
                                 <input type="number" name="prizemlje" id="zakazivanjePrizemlja1" max="40" min="10" value="10" required>
                             </form>
                             <button class="plus">+</button>
                         </div>
+
                         <div class="choice display">
-                            <button class="prihvati">Prihvati</button>
-                            <button class="ponisti">Ponisti</button>
+                            <button class="prihvatiZ" value="prizemlje">Prihvati</button>
+                            <button class="ponistiZ" value="prizemlje">Ponisti</button>
                         </div>
                     </div>
                 </div>
@@ -188,14 +189,14 @@
                         </button>
                         <div class="input display" id="zakazivanjePrviSprat">
                             <button class="minus">-</button>
-                            <form action="/kontrola/zakazivanje-prvi-sprat" method="post">
+                            <form action="/kontrola/zakazivanje-prvi-sprat-temp" method="post">
                                 <input type="number" name="prvi-sprat" id="zakazivanjePrviSprat1" max="40" min="10" value="10" required>
                             </form>
                             <button class="plus">+</button>
                         </div>
                         <div class="choice display">
-                            <button class="prihvati">Prihvati</button>
-                            <button class="ponisti">Ponisti</button>
+                            <button class="prihvatiZ" value="prvi-sprat">Prihvati</button>
+                            <button class="ponistiZ" value="prvi-sprat">Ponisti</button>
                         </div>
                     </div>
                 </div>
@@ -209,39 +210,39 @@
         <h1>asdakgjhf'oghjasf'pgjfsad'pgja'sgjfao'ghja'flokgjdsap'fgja'spigjas'dpgjsd'pifjas'pfja'spkgj</h1>
         <h1>asdakgjhf'oghjasf'pgjfsad'pgja'sgjfao'ghja'flokgjdsap'fgja'spigjas'dpgjsd'pifjas'pfja'spkgj</h1>
         <h1>asdakgjhf'oghjasf'pgjfsad'pgja'sgjfao'ghja'flokgjdsap'fgja'spigjas'dpgjsd'pifjas'pfja'spkgj</h1>
-
     </div>
 
     <div class="back-cover display"></div>
     <div class="periodi period-input-prizemlje display">
         <button class="cencel" value="prizemlje">×</button>
         <p>Odaberite period za prizemlje</p>
-        <!-- <form action="/kontrola/zakazivanje-period-prizemlje" method="post"> -->
-        <div class="input-box">
-            <label for="start">Od:</label>
-            <input type="datetime-local" name="start" id="start">
-        </div>
-        <div class="input-box">
-            <label for="end">Do:</label>
-            <input type="datetime-local" name="end" id="end">
-        </div>
+        <form action="/kontrola/zakazivanje-prizemlje-period" method="post">
+            <div class="input-box">
+                <label for="start">Od:</label>
+                <input type="datetime-local" name="start" id="start">
+            </div>
+            <div class="input-box">
+                <label for="end">Do:</label>
+                <input type="datetime-local" name="end" id="end">
+            </div>
+        </form>
         <button class="primeniZ" value="prizemlje">Primeni</button>
-        <!-- </form> -->
+
     </div>
     <div class="periodi period-input-prvi-sprat display">
         <button class="cencel" value="prvi-sprat">×</button>
         <p>Odaberite period za prvi sprat</p>
-        <!-- <form action="/kontrola/zakazivanje-period-prvi-sprat" method="post"> -->
-        <div class="input-box">
-            <label for="start">Od:</label>
-            <input type="datetime-local" name="start" id="start">
-        </div>
-        <div class="input-box">
-            <label for="end">Do:</label>
-            <input type="datetime-local" name="end" id="end">
-        </div>
+        <form action="/kontrola/zakazivanje-prvi-sprat-period" method="post">
+            <div class="input-box">
+                <label for="start">Od:</label>
+                <input type="datetime-local" name="start" id="start">
+            </div>
+            <div class="input-box">
+                <label for="end">Do:</label>
+                <input type="datetime-local" name="end" id="end">
+            </div>
+        </form>
         <button class="primeniZ">Primeni</button>
-        <!-- </form> -->
     </div>
 
 

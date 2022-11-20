@@ -157,7 +157,7 @@
 @media screen {
     .containerZ {
         background-color: transparent;
-        width: 300px;
+        width: 290px;
         height: 200px;
         padding: 5px;
         margin: 20px;
@@ -173,6 +173,9 @@
         border-radius: 20px;
     }
     .containerZ:hover .innerZ {
+        transform: rotateX(180deg);
+    }
+    .containerZ:active .innerZ {
         transform: rotateX(180deg);
     }
     .frontZ,
@@ -369,10 +372,14 @@
     display: none;
 }
 
+.active {
+    transform: rotateX(180deg);
+}
+
 @media only screen and (max-width: 1200px) {
     .periodi {
         position: fixed;
-        top: 50%;
+        top: 60%;
         left: 50%;
         z-index: 1;
         transform: translate(-50%, -100%);
@@ -382,10 +389,10 @@
 @media only screen and (max-width: 320px) {
     .containerZ {
         background-color: transparent;
-        width: 300px;
+        width: 290px;
         height: 200px;
-        padding: 5px;
-        margin: 5px;
+        padding: 0px;
+        margin: 10px;
     }
     .periodi {
         position: fixed;

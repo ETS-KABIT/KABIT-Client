@@ -178,9 +178,9 @@
                 })
             }
 
-            var primeniZ = document.querySelectorAll(".primeniZ");
-            for (var i = 0; i < primeniZ.length; i++) {
-                primeniZ[i].addEventListener("click", function(e) {
+            var primeniPeriod = document.querySelectorAll(".primeni-period");
+            for (var i = 0; i < primeniPeriod.length; i++) {
+                primeniPeriod[i].addEventListener("click", function(e) {
                     var inputStart = this.previousElementSibling.firstElementChild.children[1].value
                     var inputEnd = this.previousElementSibling.firstElementChild.nextElementSibling.children[1].value
                     var inputTempPrizemlje = document.querySelector("#zakazivanjePrizemlja")
@@ -200,7 +200,7 @@
                         } else {
                             ineerPrizemlje.classList.add("active")
                             console.log(ineerPrizemlje)
-                            console.log("poslato prizemlje")
+                            // console.log("poslato prizemlje")
                             inputTempPrizemlje.classList.remove("display")
                             boxPeriod.classList.add("display")
                             this.parentElement.previousElementSibling.classList.add("display")
@@ -221,29 +221,22 @@
                     }
                 })
             }
-            var prihvatiZ = document.querySelectorAll(".prihvatiZ");
-            for (var i = 0; i < prihvatiZ.length; i++) {
-                prihvatiZ[i].addEventListener("click", function(e) {
-                    var startVremePrizemlje = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[2].firstElementChild.children[1].value
-                    var endVremePrizemlje = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[2].firstElementChild.nextElementSibling.children[1].value
-
-                    var startVremePrviSprat = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.children[2].firstElementChild.children[1].value
-                    var endVremePrviSprat = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.children[2].firstElementChild.nextElementSibling.children[1].value
-
+            var primeniZ = document.querySelectorAll(".primeniZ");
+            for (var i = 0; i < primeniZ.length; i++) {
+                primeniZ[i].addEventListener("click", function(e) {
+                var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
+                var ineerPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje").parentElement.parentElement
                     if (this.value == "prizemlje") {
-                        var ineerPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje").parentElement.parentElement
                         ineerPrizemlje.classList.remove("active")
-
                         var formTempPrizemlje = document.querySelector("#zakazivanjePrizemljaTemp").parentElement
                         var formPeriodPrizemlje = document.querySelector("#startP").parentElement.parentElement
-                        console.log(formTempPrizemlje)
-                        console.log(formPeriodPrizemlje)
-                        formTempPrizemlje.submit()
-                        formPeriodPrizemlje.submit()
-                    } else {
-                        var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
-                        ineerPrviSprat.classList.remove("active")
+                        console.log(ineerPrizemlje)
+                        console.log(ineerPrviSprat)
 
+                        // formTempPrizemlje.submit()
+                        // formPeriodPrizemlje.submit()
+                    } else {
+                        ineerPrviSprat.classList.remove("active")
                         var formTempPrviSprat = document.querySelector("#zakazivanjePrviSpratTemp").parentElement
                         var formPeriodPrviSprat = document.querySelector("#startPS").parentElement.parentElement
                         console.log(formTempPrviSprat)
@@ -254,10 +247,38 @@
                 })
             }
             var ponistiZ = document.querySelectorAll(".ponistiZ");
-            for (var i = 0; i < prihvati.length; i++) {
+            for (var i = 0; i < ponistiZ.length; i++) {
                 ponistiZ[i].addEventListener("click", function(e) {
-                    console.log(this)
+                    var inputStartPrviSprat = document.querySelector("#startPS").value
+                    var inputEndPrviSprat = document.querySelector("#endPS").value
+                    var inputTemp = this.parentElement.previousElementSibling.children[1].firstElementChild.value
+                    var choice = this.parentElement
+                    console.log(choice)
+                    console.log(inputTemp)
 
+                    if (this.value == "prizemlje") {
+                        var inputStartPrizemlje = document.querySelector("#startP").value
+                        var inputEndPrizemlje = document.querySelector("#endP").value
+                        inputStartPrizemlje = ""
+                        inputEndPrizemlje = ""
+                        var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
+                        ineerPrviSprat.classList.remove("active")
+                        console.log("ponisteno prizemlje")
+                    }else{
+                        
+                    }
+
+                    // var inputperodPstart = prazan
+                    // var inputperodPend = prazan
+                    // var inputperodPS = prazan
+                    // var inputTemp = display none
+                    // var choice = display none          
+
+                     // choice.classList.add('display')
+                    // choice.classList.remove('choice-an')
+                        // input.value = trenTemp tog sprata
+                        // start value = trenTemp tog sprata
+                    console.log("Ponisteno")
                 })
             }
             checkStatus = !checkStatus;

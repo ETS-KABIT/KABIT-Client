@@ -6,42 +6,9 @@ var rasvetaBox = document.querySelector(".rasveta-box")
 var grejanjeBox = document.querySelector(".grejanje-box")
 var ventilacijaBox = document.querySelector(".ventilacija-box")
 var susaraBox = document.querySelector(".susara-box")
-    // #################################################################
-    // #################################################################
-    // #################################################################
 
-google.charts.load('current', { packages: ['corechart'] });
 
-function prizemlje() {
-    // Set Data
-    var data = google.visualization.arrayToDataTable([
-        ['Price', 'Size'],
-        [50, 7],
-        [60, 8],
-        [70, 8],
-        [80, 9],
-        [90, 9],
-        [100, 9],
-        [110, 10],
-        [120, 11],
-        [130, 14],
-        [140, 14],
-        [150, 15]
-    ]);
-    // Set Options
-    var options = {
-        title: 'Prizemlje',
-        hAxis: { title: 'Vreme' },
-        vAxis: { title: 'Temperatura' },
-        legend: 'none'
-    };
-    // Draw
-    var chart = new google.visualization.LineChart(document.getElementById('myChart'));
-    chart.draw(data, options);
-}
-// #################################################################
-// #################################################################
-// #################################################################
+
 
 const dropdownnButton = document.querySelector("#drpdwn-btn").addEventListener('click', function(e) {
     if (checkStatus) {
@@ -112,44 +79,101 @@ const grejanje = document.querySelector("#grejanje").addEventListener('click', f
     })
     var buttonMerenja = document.querySelectorAll(".button-merenja")
     for (var i = 0; i < buttonMerenja.length; i++) {
-        buttonMerenja[i].addEventListener("click", function(e) {
-            console.log(this)
-            if (this.value == "prizemlje") {
-                google.charts.setOnLoadCallback(prizemlje);
 
+        buttonMerenja[i].addEventListener("click", function(e) {
+            var time = new Date();
+            console.log(time.toLocaleTimeString())
+            var vreme = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00"];
+            if (this.value == "prizemlje") {
+                var tempPrizemlje = [28, 28, 29, 30, 25, 30];
+                new Chart("myChart", {
+                    type: "line",
+                    data: {
+                        labels: vreme,
+                        datasets: [{
+                            fill: false,
+                            lineTension: 0,
+                            backgroundColor: '#00a2ff',
+                            color: "#00a2ff",
+                            borderColor: "#00a2ff",
+                            data: tempPrizemlje
+                        }]
+                    },
+                    options: {
+                        legend: { display: false },
+                        scales: {
+                            y: {
+                                suggestedMin: 10,
+                                suggestedMax: 40
+                            },
+                            x: {
+                                suggestedMin: 10,
+                                suggestedMax: 40
+                            },
+                        }
+                    }
+                });
             } else if (this.value == "prvi-sprat") {
-                grafik.innerHTML = `<p>Prvi sprat</p>`
+                var tempPrviSprat = [25, 23, 24, 25, 25];
+                new Chart("myChart", {
+                    type: "line",
+                    data: {
+                        labels: vreme,
+                        datasets: [{
+                            fill: false,
+                            lineTension: 0,
+                            backgroundColor: '#00a2ff',
+                            color: "#00a2ff",
+                            borderColor: "#00a2ff",
+                            data: tempPrviSprat
+                        }]
+                    },
+                    options: {
+                        legend: { display: false },
+                        scales: {
+                            y: {
+                                suggestedMin: 10,
+                                suggestedMax: 40
+                            },
+                            x: {
+                                suggestedMin: 0,
+                                suggestedMax: 24
+                            },
+                        }
+                    }
+                });
             } else {
-                grafik.innerHTML = `<p>Spoljasnja</p>`
+                var tempSpoljasnja = [22, 23, 24, 25, 25, 31];
+                new Chart("myChart", {
+                    type: "line",
+                    data: {
+                        labels: vreme,
+                        datasets: [{
+                            fill: false,
+                            lineTension: 0,
+                            backgroundColor: '#00a2ff',
+                            color: "#00a2ff",
+                            borderColor: "#00a2ff",
+                            data: tempSpoljasnja
+                        }]
+                    },
+                    options: {
+                        legend: { display: false },
+                        scales: {
+                            y: {
+                                suggestedMin: 10,
+                                suggestedMax: 40
+                            },
+                            x: {
+                                suggestedMin: 10,
+                                suggestedMax: 40
+                            },
+                        }
+                    }
+                });
             }
+
         })
     }
     checkStatus = !checkStatus;
 })
-
-
-//rasveta
-// var rasveta = document.querySelector("#rasveta").addEventListener('click', function(e) {
-//     rasvetaBox.classList.remove("display");
-//     grejanjeBox.classList.add("display");
-//     ventilacijaBox.classList.add("display");
-//     susaraBox.classList.add("display");
-// })
-// var grejanje = document.querySelector("#grejanje").addEventListener('click', function(e) {
-//     rasvetaBox.classList.add("display");
-//     grejanjeBox.classList.remove("display");
-//     ventilacijaBox.classList.add("display");
-//     susaraBox.classList.add("display");
-// })
-// var ventilacija = document.querySelector("#ventilacija").addEventListener('click', function(e) {
-//     rasvetaBox.classList.add("display");
-//     grejanjeBox.classList.add("display");
-//     ventilacijaBox.classList.remove("display");
-//     susaraBox.classList.add("display");
-// })
-// var susara = document.querySelector("#susara").addEventListener('click', function(e) {
-//     rasvetaBox.classList.add("display");
-//     grejanjeBox.classList.add("display");
-//     ventilacijaBox.classList.add("display");
-//     susaraBox.classList.remove("display");
-// })

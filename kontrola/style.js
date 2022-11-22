@@ -52,9 +52,9 @@
                 input[i].addEventListener("change", function(e) {
                     var paragraph = this.parentElement.previousElementSibling
                     var form = this.parentElement
-                    console.log(form)
+                        // console.log(form)
                     paragraph.innerHTML = this.value + "%"
-                    form.submit()
+                        // form.submit()
                 })
             }
             checkStatus = !checkStatus;

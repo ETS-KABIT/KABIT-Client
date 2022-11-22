@@ -26,8 +26,8 @@ run();
 
 let xhr = new XMLHttpRequest();
 xhr.open("POST", "/kontrola/dnevna-soba");
-xhr.setRequestHeader("Accept", "text");
-xhr.setRequestHeader("Content-Type", "text");
+xhr.setRequestHeader("Accept", "application/json");
+xhr.setRequestHeader("Content-Type", "application/json");
 
 xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) {
@@ -36,6 +36,8 @@ xhr.onreadystatechange = function() {
     }
 };
 
-let data = "hello";
+let data = `{
+  "Id": 78912
+}`;
 
 xhr.send(data);

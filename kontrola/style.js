@@ -148,36 +148,15 @@
                     var backCover = this.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling
                     if (this.value == "prizemlje") {
                         var boxPrizemlje = this.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling
-                            // console.log(boxPrizemlje)
-                            // console.log(backCover)
                         boxPrizemlje.classList.remove('display')
                         backCover.classList.remove('display')
                     } else {
                         var boxPrviSprat = this.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-                            // console.log(boxPrviSprat)
-                            // console.log(backCover)
                         boxPrviSprat.classList.remove('display')
                         backCover.classList.remove('display')
                     }
                 })
             }
-            var cencel = document.querySelectorAll(".cencel");
-            for (var i = 0; i < cencel.length; i++) {
-                cencel[i].addEventListener("click", function(e) {
-                    if (this.value == "prizemlje") {
-                        var boxPrizemlje = this.parentElement
-                        var backCover = this.parentElement.previousElementSibling
-                        boxPrizemlje.classList.add('display')
-                        backCover.classList.add('display')
-                    } else {
-                        var boxPrviSprat = this.parentElement;
-                        var backCover = this.parentElement.previousElementSibling.previousElementSibling
-                        boxPrviSprat.classList.add('display')
-                        backCover.classList.add('display')
-                    }
-                })
-            }
-
             var primeniPeriod = document.querySelectorAll(".primeni-period");
             for (var i = 0; i < primeniPeriod.length; i++) {
                 primeniPeriod[i].addEventListener("click", function(e) {
@@ -185,35 +164,35 @@
                     var inputEnd = this.previousElementSibling.firstElementChild.nextElementSibling.children[1].value
                     var inputTempPrizemlje = document.querySelector("#zakazivanjePrizemlja")
                     var inputTempPrviSprat = document.querySelector("#zakazivanjePrviSprat")
-
-                    var formTempPrizemlje = inputTempPrizemlje.firstElementChild.nextElementSibling
-                    var formTempPrviSprat = inputTempPrviSprat.firstElementChild.nextElementSibling
-
                     var boxPeriod = this.parentElement
                     const timeDate = new Date().toJSON();
+                    var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
+                    var ineerPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje").parentElement.parentElement
+
                     if (this.value == "prizemlje") {
-                        var ineerPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje").parentElement.parentElement
                         ineerPrizemlje.classList.add("active")
                         if (inputStart <= timeDate || inputEnd <= inputStart) {
                             alert("Pogresan unos")
+                            ineerPrviSprat.classList.remove("active")
                             ineerPrizemlje.classList.add("active")
                         } else {
+                            ineerPrviSprat.classList.remove("active")
                             ineerPrizemlje.classList.add("active")
-                            console.log(ineerPrizemlje)
-                            // console.log("poslato prizemlje")
+                            console.log("poslato prizemlje period")
                             inputTempPrizemlje.classList.remove("display")
                             boxPeriod.classList.add("display")
                             this.parentElement.previousElementSibling.classList.add("display")
                         }
                     } else {
-                        var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
                         ineerPrviSprat.classList.add("active")
                         if (inputStart <= timeDate || inputEnd <= inputStart) {
                             alert("Pogresan unos")
                             ineerPrviSprat.classList.add("active")
+                            ineerPrizemlje.classList.remove("active")
                         } else {
                             ineerPrviSprat.classList.add("active")
-                            console.log("poslato prvi sprat")
+                            ineerPrizemlje.classList.remove("active")
+                            console.log("poslato prvi sprat period")
                             inputTempPrviSprat.classList.remove("display")
                             boxPeriod.classList.add("display")
                             this.parentElement.previousElementSibling.previousElementSibling.classList.add("display")
@@ -221,21 +200,42 @@
                     }
                 })
             }
-            var primeniZ = document.querySelectorAll(".primeniZ");
-            for (var i = 0; i < primeniZ.length; i++) {
-                primeniZ[i].addEventListener("click", function(e) {
-                var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
-                var ineerPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje").parentElement.parentElement
+            var cencel = document.querySelectorAll(".cencel");
+            for (var i = 0; i < cencel.length; i++) {
+                cencel[i].addEventListener("click", function(e) {
+                    var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
+                    var ineerPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje").parentElement.parentElement
+
                     if (this.value == "prizemlje") {
+                        var boxPrizemlje = this.parentElement
+                        var backCover = this.parentElement.previousElementSibling
+                        boxPrizemlje.classList.add('display')
+                        backCover.classList.add('display')
+                        ineerPrizemlje.classList.remove("active")
+                    } else {
+                        var boxPrviSprat = this.parentElement;
+                        var backCover = this.parentElement.previousElementSibling.previousElementSibling
+                        boxPrviSprat.classList.add('display')
+                        backCover.classList.add('display')
+                        ineerPrviSprat.classList.remove("active")
+
+                    }
+                })
+            }
+            var prihvatiZ = document.querySelectorAll(".primeniZ");
+            for (var i = 0; i < prihvatiZ.length; i++) {
+                prihvatiZ[i].addEventListener("click", function(e) {
+                    if (this.value == "prizemlje") {
+                        var ineerPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje").parentElement.parentElement
                         ineerPrizemlje.classList.remove("active")
                         var formTempPrizemlje = document.querySelector("#zakazivanjePrizemljaTemp").parentElement
                         var formPeriodPrizemlje = document.querySelector("#startP").parentElement.parentElement
-                        console.log(ineerPrizemlje)
-                        console.log(ineerPrviSprat)
-
-                        // formTempPrizemlje.submit()
-                        // formPeriodPrizemlje.submit()
+                        console.log(formTempPrizemlje)
+                        console.log(formPeriodPrizemlje)
+                        formTempPrizemlje.submit()
+                        formPeriodPrizemlje.submit()
                     } else {
+                        var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
                         ineerPrviSprat.classList.remove("active")
                         var formTempPrviSprat = document.querySelector("#zakazivanjePrviSpratTemp").parentElement
                         var formPeriodPrviSprat = document.querySelector("#startPS").parentElement.parentElement
@@ -247,38 +247,23 @@
                 })
             }
             var ponistiZ = document.querySelectorAll(".ponistiZ");
-            for (var i = 0; i < ponistiZ.length; i++) {
+            for (var i = 0; i < prihvati.length; i++) {
                 ponistiZ[i].addEventListener("click", function(e) {
-                    var inputStartPrviSprat = document.querySelector("#startPS").value
-                    var inputEndPrviSprat = document.querySelector("#endPS").value
-                    var inputTemp = this.parentElement.previousElementSibling.children[1].firstElementChild.value
-                    var choice = this.parentElement
-                    console.log(choice)
-                    console.log(inputTemp)
-
+                    var inputStartPrizemlje = document.querySelector("#startP")
+                    var inputEndPrizemlje = document.querySelector("#endP")
+                    var inputStartPrviSprat = document.querySelector("#startPS")
+                    var inputEndPrviSprat = document.querySelector("#endPS")
+                    var inputTemp = this.parentElement.previousElementSibling.children[1].firstElementChild
                     if (this.value == "prizemlje") {
-                        var inputStartPrizemlje = document.querySelector("#startP").value
-                        var inputEndPrizemlje = document.querySelector("#endP").value
-                        inputStartPrizemlje = ""
-                        inputEndPrizemlje = ""
-                        var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
-                        ineerPrviSprat.classList.remove("active")
-                        console.log("ponisteno prizemlje")
-                    }else{
-                        
+                        inputStartPrizemlje.value = ""
+                        inputEndPrizemlje.value = ""
+                        inputTemp.value = 10
+
+                    } else {
+                        inputStartPrviSprat.value = ""
+                        inputEndPrviSprat.value = ""
+                        inputTemp.value = 10
                     }
-
-                    // var inputperodPstart = prazan
-                    // var inputperodPend = prazan
-                    // var inputperodPS = prazan
-                    // var inputTemp = display none
-                    // var choice = display none          
-
-                     // choice.classList.add('display')
-                    // choice.classList.remove('choice-an')
-                        // input.value = trenTemp tog sprata
-                        // start value = trenTemp tog sprata
-                    console.log("Ponisteno")
                 })
             }
             checkStatus = !checkStatus;
@@ -304,5 +289,22 @@
                 ventilacijaBox.classList.add("display")
             }
         })
-
+        var checkbox = document.querySelectorAll('input[type ="checkbox"]')
+        for (var i = 0; i < checkbox.length; i++) {
+            checkbox[i].addEventListener("click", function(e) {
+                console.log(this.checked)
+                var stateParagraph = this.parentElement.parentElement.previousElementSibling
+                var stateParagraphOutside = stateParagraph.parentElement.previousElementSibling.children[1]
+                var form = stateParagraph.nextElementSibling
+                console.log(form)
+                if (this.checked == true) {
+                    stateParagraph.innerHTML = "Otvoreno"
+                    stateParagraphOutside.innerHTML = "Otvoreno"
+                } else {
+                    stateParagraph.innerHTML = "Zatvoreno"
+                    stateParagraphOutside.innerHTML = "Zatvoreno"
+                }
+                form.submit()
+            })
+        }
     })

@@ -8,6 +8,7 @@
     <title>Kontrola</title>
     <link rel="stylesheet" href="/kontrola/rasveta.css">
     <link rel="stylesheet" href="/kontrola/grejanje.css">
+    <link rel="stylesheet" href="/kontrola/ventilacija.css">
     <link rel="stylesheet" href="/kontrola/kontrola.css">
 </head>
 
@@ -190,7 +191,7 @@
                         <div class="input display" id="zakazivanjePrviSprat">
                             <button class="minus">-</button>
                             <form action="/kontrola/zakazivanje-prvi-sprat-temp" method="post">
-                                <input type="number" name="prvi-sprat" id="zakazivanjePrviSpratTemp" max="40" min="10" value="10" required>
+                                <input type="number" name="prvi-sprat" id="zakazivanjePrviSpratTemp" class="input-zakazivanje" max="40" min="10" value="10" required>
                             </form>
                             <button class="plus">+</button>
                         </div>
@@ -204,31 +205,44 @@
         </div>
     </div>
     <div class="ventilacija display" id="ventilacija-box">
-        <!-- <div class="container">
+        <div class="container">
             <div class="inner">
                 <div class="front ">
                     <p>Prozor 1</p>
-                    <p id="stanje-prozor1">Otvoren/zatvoren</p>
+                    <p></p>
                 </div>
                 <div class="back">
-                    <p id="stanje-prozor1">Otvoren/zatvoren</p>
-                    <div class="input">
-                        <form action="/kontrola/trenutna-prvi-sprat" method="post">
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider"></span>
+                    <p></p>
+                    <form action="/kontrola/ventilacija-prozor1" method="post">
+                        <label class="switch">
+                                <input type="checkbox" id="prozor1">
+                                <span class="slider round"></span>
                               </label>
-                        </form>
-                    </div>
-                    <div class="choice display" id="trenutnaChoicePrviSprat">
-                        <button class="primeniZ">Primeni</button>
-                        <button class="ponistiZ">Ponisti</button>
-                    </div>
+                    </form>
                 </div>
             </div>
-        </div> -->
-    </div>
+        </div>
+        <div class="container">
+            <div class="inner">
+                <div class="front ">
+                    <p>Prozor 2</p>
+                    <p></p>
+                </div>
+                <div class="back">
+                    <p></p>
+                    <form action="/kontrola/ventilacija-prozor2" method="post">
+                        <label class="switch">
+                                <input type="checkbox" id="prozor2">
+                                <span class="slider round"></span>
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </div>
 
+
+    </div>
+    <!-- ############################# -->
     <div class="back-cover display"></div>
     <div class="periodi period-input-prizemlje display">
         <button class="cencel" value="prizemlje">×</button>

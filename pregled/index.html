@@ -6,11 +6,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontrola</title>
-    <link rel="stylesheet" href="/pregled/style.css">
+    <link rel="stylesheet" href="/pregled/rasveta.css">
 </head>
 
 <body>
     <h1>Pregled</h1>
+    <nav>
+        <menu>
+            <button id="rasveta">Rasveta</button>
+            <button id="grejanje">Grejanje</button>
+            <button id="ventilacija">Ventilacija</button>
+            <button id="susara">Sušara</button>
+        </menu>
+        <button class="dropdown" id="drpdwn-btn">
+        <p>Odaberi podešavanja</p>
+          <img id="image" src="/assets/kontrola/down-arrow.png" alt="">
+      </button>
+    </nav>
 
+
+    <div class="rasveta-box display">
+        <section>
+            <p>Dnevna soba</p>
+            <div class="text">
+                <p id="dnevna-soba-intenzitet">1</p><span>%</span>
+            </div>
+        </section>
+        <section>
+            <p>Kupatilo</p>
+            <div class="text">
+                <p id="kupatilo-soba-intenzitet">2</p><span>%</span>
+            </div>
+        </section>
+        <section>
+            <p>Hodnik</p>
+            <div class="text">
+                <p id="hodnik-intenzitet">3</p><span>%</span>
+            </div>
+        </section>
+        <section>
+            <p>Stepenice</p>
+            <div class="text">
+                <p id="stepenice-intenzitet">4</p><span>%</span>
+            </div>
+        </section>
+        <section>
+            <p>Soba 1</p>
+            <div class="text">
+                <p id="soba-1-intenzitet">5</p><span>%</span>
+            </div>
+        </section>
+        <section>
+            <p>Soba 2</p>
+            <div class="text">
+                <p id="soba-2-intenzitet">6</p><span>%</span>
+            </div>
+        </section>
+    </div>
+    <div class="grejanje-box display">
+        <button>
+            <p>Prizemlje</p>
+            <div class="text-merenje">
+                <p id="prizemlje-temp">1</p>
+                <span>°C</span>
+            </div>
+        </button>
+        <button>
+            <div class="text-merenje">
+                <p id="prvi-sprat-temp">2</p>
+                <span>°C</span>
+            </div>
+        </button>
+        <button>
+            <div class="text-merenje">
+                <p id="spoljasnja-temp">3</p>
+                <span>°C</span>
+            </div>
+        </button>
+    </div>
+    <!-- <div class="ventilacija-box display">
+        ventilacija
+    </div>
+    <div class="susara-box display">
+        susara
+    </div> -->
     <script src="/pregled/style.js"></script>
 </body>

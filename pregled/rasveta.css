@@ -102,6 +102,8 @@ body {
 .rasveta-box {
     position: absolute;
     top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -142,4 +144,8 @@ section .text span {
     font-size: 20px;
     font-weight: 900;
     color: black;
+}
+
+.display {
+    display: none;
 }

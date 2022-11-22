@@ -1,0 +1,72 @@
+.grejanje-box {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.grejanje-box .button-holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.grejanje-box .button-holder button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    font-size: 15px;
+    font-weight: 900;
+    border: 3px solid transparent;
+    transition: 0.2s;
+}
+
+.grejanje-box .button-holder button:hover {
+    transform: scale(1.1);
+    border: 3px solid black;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.grejanje-box .button-holder button:focus {
+    transform: scale(1.1);
+    border: 3px solid #0076bb;
+    transition: 0.2s;
+}
+
+.grejanje-box .button-holder button .text-merenje {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    color: #00a2ff;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.grejanje-box .grafik {
+    background-color: white;
+    width: 290px;
+    height: 210px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.display {
+    display: none;
+}

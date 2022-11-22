@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontrola</title>
+    <script src="/library/loader.js"></script>
+
     <link rel="stylesheet" href="/pregled/rasveta.css">
+    <link rel="stylesheet" href="/pregled/merenja.css">
+
 </head>
 
 <body>
@@ -64,25 +68,30 @@
         </section>
     </div>
     <div class="grejanje-box display">
-        <button>
+        <div class="button-holder">
+            <button class="button-merenja" value="prizemlje">
             <p>Prizemlje</p>
             <div class="text-merenje">
                 <p id="prizemlje-temp">1</p>
                 <span>°C</span>
             </div>
         </button>
-        <button>
+            <button class="button-merenja" value="prvi-sprat">
+            <p>Prvi sprat</p>
             <div class="text-merenje">
                 <p id="prvi-sprat-temp">2</p>
                 <span>°C</span>
             </div>
         </button>
-        <button>
+            <button class="button-merenja" value="spoljasnja">
+            <p>Spoljasnja</p>
             <div class="text-merenje">
                 <p id="spoljasnja-temp">3</p>
                 <span>°C</span>
             </div>
         </button>
+        </div>
+        <div id="myChart" style="max-width:700px; height:400px"></div>
     </div>
     <!-- <div class="ventilacija-box display">
         ventilacija

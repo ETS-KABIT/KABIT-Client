@@ -38,7 +38,7 @@ function runPrizemlje() {
                 var zakazivanjeTempPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje")
                 trenTempPrizemlje.innerHTML = this.responseText
                 zakazivanjeTempPrizemlje.innerHTML = this.responseText
-                console("prizemlje")
+                console.log(this.responseText);
             }
         }
         // Sending our request 
@@ -60,7 +60,7 @@ function runPrviSprat() {
                 var zakazivanjeTempPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat")
                 trenTempPrviSprat.innerHTML = this.responseText
                 zakazivanjeTempPrviSprat.innerHTML = this.responseText
-                console("prvi sprat")
+                console.log(this.responseText);
             }
         }
         // Sending our request 

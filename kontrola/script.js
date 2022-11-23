@@ -27,7 +27,6 @@ for (var i = 0; i < inputR.length; i++) {
 function runPrizemlje() {
     // Creating Our XMLHttpRequest object 
     var xhr = new XMLHttpRequest();
-
     // Making our connection  
     var url = '/request/temp/prizemlje';
     xhr.open("GET", url, true);
@@ -84,17 +83,39 @@ for (var i = 0; i < prihvati.length; i++) {
             }
         };
         let data = `{
-                "floor": ${floor}
-                "temp": ${temp}
+                "floor": "${floor}",
+                "temp": "${temp}"
 
             }`;
         console.log(data)
         xhr.send(data);
     })
 }
+var poinsti = document.querySelectorAll(".ponisti");
+for (var i = 0; i < poinsti.length; i++) {
+    poinsti[i].addEventListener("click", function(e) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "/kontrola/trenutna");
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        let floor = this.parentElement.previousElementSibling.children[1].name
+        let temp = 0
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+            }
+        };
+        let data = `{
+                "floor": "${floor}",
+                "temp": "${temp}"
 
+            }`;
+        console.log(data)
+        xhr.send(data);
+    })
+}
 ////GREJANJE  zakazivanje  
-
 var primeniZ = document.querySelectorAll(".primeniZ");
 for (var i = 0; i < primeniZ.length; i++) {
     primeniZ[i].addEventListener("click", function(e) {
@@ -105,7 +126,9 @@ for (var i = 0; i < primeniZ.length; i++) {
             xhr.setRequestHeader("Content-Type", "application/json");
             let floor = "prizemlje"
             let temp = this.parentElement.previousElementSibling.children[1].value
-            let startPrizemlje = document.querySelector("#startP").value
+            let rawStartPrizemlje = document.querySelector("#startP").value
+            const startPrizemlje = unix(rawStartPrizemlje)
+
             let endPrizemlje = document.querySelector("#endP").value
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
@@ -114,10 +137,10 @@ for (var i = 0; i < primeniZ.length; i++) {
                 }
             };
             let data = `{
-            "floor": ${floor}
-            "temp": ${temp}
-            "Start Time Prizemlje": ${startPrizemlje}
-            "End Time Prizemlje": ${endPrizemlje}
+            "floor": "${floor}",
+            "temp": "${temp}",
+            "Start Time Prizemlje": "${startPrizemlje}",
+            "End Time Prizemlje": "${endPrizemlje}"
             }`;
             console.log(data)
             xhr.send(data);
@@ -137,10 +160,62 @@ for (var i = 0; i < primeniZ.length; i++) {
                 }
             };
             let data = `{
-            "floor": ${floor}
-            "temp": ${temp}
-            "Start Time Prvi Sprat": ${startPrviSprat}
-            "End Time Prvi Sprat": ${endPrviSprat}
+            "floor": "${floor}",
+            "temp": "${temp}",
+            "Start Time Prvi Sprat": "${startPrviSprat.unix()}",
+            "End Time Prvi Sprat": "${endPrviSprat.unix()}",
+            }`;
+            console.log(data)
+            xhr.send(data);
+        }
+    })
+}
+var ponistiZ = document.querySelectorAll(".ponistiZ");
+for (var i = 0; i < ponistiZ.length; i++) {
+    ponistiZ[i].addEventListener("click", function(e) {
+        if (this.value == "prizemlje") {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "/kontrola/zakazivanje");
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            let floor = "prizemlje"
+            let temp = 0
+            let startPrizemlje = ""
+            let endPrizemlje = ""
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    console.log(xhr.status);
+                    console.log(xhr.responseText);
+                }
+            };
+            let data = `{
+            "floor": "${floor}",
+            "temp": "${temp}",
+            "Start Time Prizemlje": "${startPrizemlje}",
+            "End Time Prizemlje": "${endPrizemlje}"
+            }`;
+            console.log(data)
+            xhr.send(data);
+        } else {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "/kontrola/dnevna-soba");
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            let floor = "Prvi sprat"
+            let temp = this.parentElement.previousElementSibling.children[1].value
+            let startPrviSprat = document.querySelector("#startPS").value
+            let endPrviSprat = document.querySelector("#endPS").value
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    console.log(xhr.status);
+                    console.log(xhr.responseText);
+                }
+            };
+            let data = `{
+            "floor": "${floor}",
+            "temp": "${temp}",
+            "Start Time Prvi Sprat": "${startPrviSprat}",
+            "End Time Prvi Sprat": "${endPrviSprat}",
             }`;
             console.log(data)
             xhr.send(data);

@@ -15,7 +15,8 @@ for (var i = 0; i < inputR.length; i++) {
             }
         };
         let data = `{
-            ${name}: ${value}
+            "name": "${name}",
+            "value": ${value}
         }`;
         console.log(data)
         xhr.send(data);

@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontrola</title>
+    <title>Pregled</title>
     <link rel="stylesheet" href="/pregled/rasveta.css">
     <link rel="stylesheet" href="/pregled/merenja.css">
+    <link rel="stylesheet" href="/pregled/ventilacija-susara.css">
     <script src="/library/loader.js"></script>
 </head>
 
@@ -89,9 +90,35 @@
             </div>
         </button>
         </div>
-        <div class="graphic">
+        <div class="graphic display">
             <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
         </div>
+    </div>
+    <div class="ventilacija-box display">
+        <section class="ventilacija-holder">
+            <p>Prozor 1</p>
+            <p>Otvoreno</p>
+        </section>
+        <section class="ventilacija-holder">
+            <p>Prozor 2</p>
+            <p>Zatvoreno</p>
+        </section>
+    </div>
+    <div class="susara-box display">
+        <section class="susara-holder">
+            <p>Temperatura</p>
+            <div class="text-merenje">
+                <p id="prizemlje-temp">24</p>
+                <span>°C</span>
+            </div>
+        </section>
+        <section class="susara-holder">
+            <p>Vlaznost</p>
+            <div class="text-merenje">
+                <p id="prizemlje-temp">50</p>
+                <span>%</span>
+            </div>
+        </section>
     </div>
 
     <script src="/pregled/style.js"></script>

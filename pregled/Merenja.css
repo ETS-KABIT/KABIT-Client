@@ -71,8 +71,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: apper 0.5s linear forwards;
 }
 
 .display {
     display: none;
+}
+
+@keyframes apper {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    50% {
+        display: flex;
+        opacity: 0;
+    }
+    100% {
+        display: flex;
+        opacity: 1;
+    }
 }

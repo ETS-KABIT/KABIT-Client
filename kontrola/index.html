@@ -32,7 +32,6 @@
                 </div>
                 <div class="backR">
                     <p></p>
-
                     <input type="range" name="slider" id="dnevna-soba">
                 </div>
             </div>
@@ -44,9 +43,7 @@
                 </div>
                 <div class="backR">
                     <p></p>
-                    <form action="/kontrola/kupatlo" method="post">
-                        <input type="range" name="slider" id="kupatlo">
-                    </form>
+                    <input type="range" name="slider" id="kupatlo">
                 </div>
             </div>
         </div>
@@ -57,9 +54,7 @@
                 </div>
                 <div class="backR">
                     <p></p>
-                    <form action="/kontrola/hodnik" method="post">
-                        <input type="range" name="slider" id="hodnik">
-                    </form>
+                    <input type="range" name="slider" id="hodnik">
                 </div>
             </div>
         </div>
@@ -70,9 +65,7 @@
                 </div>
                 <div class="backR">
                     <p></p>
-                    <form action="/kontrola/stepenice" method="post">
-                        <input type="range" name="slider" id="stepenice">
-                    </form>
+                    <input type="range" name="slider" id="stepenice">
                 </div>
             </div>
         </div>
@@ -83,9 +76,7 @@
                 </div>
                 <div class="backR">
                     <p></p>
-                    <form action="/kontrola/soba-1" method="post">
-                        <input type="range" name="slider" id="soba-1">
-                    </form>
+                    <input type="range" name="slider" id="soba-1">
                 </div>
             </div>
         </div>
@@ -96,9 +87,7 @@
                 </div>
                 <div class="backR">
                     <p></p>
-                    <form action="/kontrola/soba-2" method="post">
-                        <input type="range" name="slider" id="soba-2">
-                    </form>
+                    <input type="range" name="slider" id="soba-2">
                 </div>
             </div>
         </div>
@@ -115,9 +104,7 @@
                         <p>Unesi temperaturu:</p>
                         <div class="input">
                             <button class="minus">-</button>
-                            <form action="/kontrola/trenutna-prizemlje" method="post">
-                                <input type="number" name="prizemlje" id="trenutnaPrizemlje" max="40" min="10" value="10">
-                            </form>
+                            <input type="number" name="prizemlje" id="trenutnaPrizemlje" max="40" min="10" value="10">
                             <button class="plus">+</button>
                         </div>
                         <div class="choice display">
@@ -138,9 +125,7 @@
                         <p>Unesi temperaturu:</p>
                         <div class="input">
                             <button class="minus">-</button>
-                            <form action="/kontrola/trenutna-prvi-sprat" method="post">
-                                <input type="number" name="prvi-sprat" id="trenutnaPrviSprat" max="40" min="10" value="10">
-                            </form>
+                            <input type="number" name="prvi-sprat" id="trenutnaPrviSprat" max="40" min="10" value="10">
                             <button class="plus">+</button>
                         </div>
                         <div class="choice display" id="trenutnaChoicePrviSprat">
@@ -164,9 +149,7 @@
                         </button>
                         <div class="input display" id="zakazivanjePrizemlja">
                             <button class="minus">-</button>
-                            <form action="/kontrola/zakazivanje-prizemlja-temp" method="post">
-                                <input type="number" name="prizemlje" id="zakazivanjePrizemljaTemp" max="40" min="10" value="10" required>
-                            </form>
+                            <input type="number" name="prizemlje" id="zakazivanjePrizemljaTemp" max="40" min="10" value="10" required>
                             <button class="plus">+</button>
                         </div>
 
@@ -189,9 +172,7 @@
                         </button>
                         <div class="input display" id="zakazivanjePrviSprat">
                             <button class="minus">-</button>
-                            <form action="/kontrola/zakazivanje-prvi-sprat-temp" method="post">
-                                <input type="number" name="prvi-sprat" id="zakazivanjePrviSpratTemp" class="input-zakazivanje" max="40" min="10" value="10" required>
-                            </form>
+                            <input type="number" name="prvi-sprat" id="zakazivanjePrviSpratTemp" class="input-zakazivanje" max="40" min="10" value="10" required>
                             <button class="plus">+</button>
                         </div>
                         <div class="choice display">
@@ -212,12 +193,10 @@
                 </div>
                 <div class="back">
                     <p></p>
-                    <form action="/kontrola/ventilacija-prozor1" method="post">
-                        <label class="switch">
+                    <label class="switch">
                                 <input type="checkbox" id="prozor1">
                                 <span class="slider round"></span>
-                              </label>
-                    </form>
+                    </label>
                 </div>
             </div>
         </div>
@@ -229,12 +208,10 @@
                 </div>
                 <div class="back">
                     <p></p>
-                    <form action="/kontrola/ventilacija-prozor2" method="post">
-                        <label class="switch">
+                    <label class="switch">
                                 <input type="checkbox" id="prozor2">
                                 <span class="slider round"></span>
                         </label>
-                    </form>
                 </div>
             </div>
         </div>
@@ -246,32 +223,28 @@
     <div class="periodi period-input-prizemlje display">
         <button class="cencel" value="prizemlje">×</button>
         <p>Odaberite period za prizemlje</p>
-        <form action="/kontrola/zakazivanje-prizemlje-period" method="post">
-            <div class="input-box">
-                <label for="start">Od:</label>
-                <input type="datetime-local" name="start" id="startP">
-            </div>
-            <div class="input-box">
-                <label for="end">Do:</label>
-                <input type="datetime-local" name="end" id="endP">
-            </div>
-        </form>
+        <div class="input-box">
+            <label for="start">Od:</label>
+            <input type="datetime-local" name="start" id="startP">
+        </div>
+        <div class="input-box">
+            <label for="end">Do:</label>
+            <input type="datetime-local" name="end" id="endP">
+        </div>
         <button class="primeni-period" value="prizemlje">Primeni</button>
 
     </div>
     <div class="periodi period-input-prvi-sprat display">
         <button class="cencel" value="prvi-sprat">×</button>
         <p>Odaberite period za prvi sprat</p>
-        <form action="/kontrola/zakazivanje-prvi-sprat-period" method="post">
-            <div class="input-box">
-                <label for="start">Od:</label>
-                <input type="datetime-local" name="start" id="startPS">
-            </div>
-            <div class="input-box">
-                <label for="end">Do:</label>
-                <input type="datetime-local" name="end" id="endPS">
-            </div>
-        </form>
+        <div class="input-box">
+            <label for="start">Od:</label>
+            <input type="datetime-local" name="start" id="startPS">
+        </div>
+        <div class="input-box">
+            <label for="end">Do:</label>
+            <input type="datetime-local" name="end" id="endPS">
+        </div>
         <button class="primeni-period">Primeni</button>
     </div>
 

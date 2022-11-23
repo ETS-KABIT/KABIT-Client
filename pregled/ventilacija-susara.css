@@ -1,0 +1,72 @@
+.ventilacija-box {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.ventilacija-holder {
+    margin: 5px;
+    background-color: white;
+    width: 230px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ventilacija-holder p:nth-child(1) {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.ventilacija-holder p:nth-child(2) {
+    color: black;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.susara-box {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.susara-holder {
+    margin: 5px;
+    background-color: white;
+    width: 230px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.susara-holder .text-merenje {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.susara-holder .text-merenje p {
+    color: black;
+    font-size: 20px;
+}
+
+.susara-holder .text-merenje span {
+    color: black;
+    font-weight: 900;
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.display {
+    display: none;
+}

@@ -6,10 +6,6 @@ var rasvetaBox = document.querySelector(".rasveta-box")
 var grejanjeBox = document.querySelector(".grejanje-box")
 var ventilacijaBox = document.querySelector(".ventilacija-box")
 var susaraBox = document.querySelector(".susara-box")
-
-
-
-
 const dropdownnButton = document.querySelector("#drpdwn-btn").addEventListener('click', function(e) {
     if (checkStatus) {
         navigation.classList.remove("reverse-slide")
@@ -42,9 +38,6 @@ const rasveta = document.querySelector("#rasveta").addEventListener('click', fun
     var dropdownnButton = document.querySelector("#drpdwn-btn")
     rasvetaBox.classList.remove("display")
     grejanjeBox.classList.add("display")
-
-
-
     dropdownnButton.addEventListener('click', function(e) {
         if (checkStatus == true && settingsWindow == "rasveta") {
             rasvetaBox.classList.remove("display")
@@ -79,10 +72,9 @@ const grejanje = document.querySelector("#grejanje").addEventListener('click', f
     })
     var buttonMerenja = document.querySelectorAll(".button-merenja")
     for (var i = 0; i < buttonMerenja.length; i++) {
-
         buttonMerenja[i].addEventListener("click", function(e) {
-            var time = new Date();
-            console.log(time.toLocaleTimeString())
+            var graphicBox = document.querySelector(".graphic")
+            graphicBox.classList.remove("display")
             var vreme = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00"];
             if (this.value == "prizemlje") {
                 var tempPrizemlje = [28, 28, 29, 30, 25, 30];
@@ -176,4 +168,55 @@ const grejanje = document.querySelector("#grejanje").addEventListener('click', f
         })
     }
     checkStatus = !checkStatus;
+})
+const ventilacija = document.querySelector("#ventilacija").addEventListener('click', function(e) {
+    settingsWindow = "ventilacija"
+    navigation.classList.remove("slide")
+    navigation.classList.add("reverse-slide")
+    img.setAttribute(
+        'src',
+        '/assets/kontrola/down-arrow.png',
+    );
+
+    var dropdownnButton = document.querySelector("#drpdwn-btn")
+    rasvetaBox.classList.add("display")
+    grejanjeBox.classList.add("display")
+    ventilacijaBox.classList.remove("display")
+
+    dropdownnButton.addEventListener('click', function(e) {
+        if (checkStatus == true && settingsWindow == "rasveta") {
+            ventilacijaBox.classList.remove("display")
+        } else {
+            ventilacijaBox.classList.add("display")
+
+        }
+    })
+    checkStatus = !checkStatus;
+
+})
+const susara = document.querySelector("#susara").addEventListener('click', function(e) {
+    settingsWindow = "susara"
+    navigation.classList.remove("slide")
+    navigation.classList.add("reverse-slide")
+    img.setAttribute(
+        'src',
+        '/assets/kontrola/down-arrow.png',
+    );
+
+    var dropdownnButton = document.querySelector("#drpdwn-btn")
+    rasvetaBox.classList.add("display")
+    grejanjeBox.classList.add("display")
+    ventilacijaBox.classList.add("display")
+    susaraBox.classList.remove("display")
+
+    dropdownnButton.addEventListener('click', function(e) {
+        if (checkStatus == true && settingsWindow == "rasveta") {
+            susaraBox.classList.remove("display")
+        } else {
+            susaraBox.classList.add("display")
+
+        }
+    })
+    checkStatus = !checkStatus;
+
 })

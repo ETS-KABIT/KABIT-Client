@@ -322,14 +322,7 @@
         font-size: 20px;
         font-weight: 1000;
     }
-    .periodi form {
-        height: 130px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-    }
-    .periodi form input {
+    .periodi input {
         padding: 15px;
         border-radius: 50px;
         margin: 10px;
@@ -337,7 +330,7 @@
         color: #fff;
         border: none;
     }
-    .periodi form .input-box {
+    .periodi .input-box {
         font-size: 15px;
         font-weight: 800;
     }

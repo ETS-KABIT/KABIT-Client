@@ -50,11 +50,8 @@
             var input = document.querySelectorAll('input[type ="range"]');
             for (var i = 0; i < input.length; i++) {
                 input[i].addEventListener("change", function(e) {
-                    var paragraph = this.parentElement.previousElementSibling
-                    var form = this.parentElement
-                        // console.log(form)
+                    var paragraph = this.previousElementSibling
                     paragraph.innerHTML = this.value + "%"
-                        // form.submit()
                 })
             }
             checkStatus = !checkStatus;
@@ -82,9 +79,8 @@
             var minus = document.querySelectorAll(".minus");
             for (var i = 0; i < minus.length; i++) {
                 minus[i].addEventListener("click", function(e) {
-                    var input = this.nextElementSibling.firstElementChild
+                    var input = this.nextElementSibling
                     var choice = this.parentElement.nextElementSibling
-
                     if (input.value <= 10) {
                         input.value = 10;
                         alert('Vrednost ne moze biti manja od 10')
@@ -98,7 +94,7 @@
             var plus = document.querySelectorAll(".plus");
             for (var i = 0; i < plus.length; i++) {
                 plus[i].addEventListener("click", function(e) {
-                    var input = this.previousElementSibling.firstElementChild
+                    var input = this.previousElementSibling
                     var choice = this.parentElement.nextElementSibling
 
                     if (input.value >= 40) {
@@ -116,13 +112,10 @@
                 prihvati[i].addEventListener("click", function(e) {
                     var front = this.parentElement.parentElement.previousElementSibling
                     var back = this.parentElement.parentElement
-                    var input = this.parentElement.previousElementSibling.children[1].firstElementChild
-                    var form = input.parentElement
-                    console.log(form)
-                    form.submit()
+                    var input = this.parentElement.previousElementSibling.children[1]
+
                     front.style.border = "5px solid green";
                     back.style.border = "5px solid green";
-                    console.log("Zeljena temperatura prizemlja je: ", input.value);
                 })
             }
             var ponisti = document.querySelectorAll(".ponisti");
@@ -136,8 +129,7 @@
                     back.style.border = "5px solid transparent"
                     choice.classList.add('display')
                     choice.classList.remove('choice-an')
-                        // input.value = trenTemp tog sprata
-                        // start value = trenTemp tog sprata
+
                     console.log("Ponistena temperatura prizemlje")
                 })
             }
@@ -160,11 +152,13 @@
             var primeniPeriod = document.querySelectorAll(".primeni-period");
             for (var i = 0; i < primeniPeriod.length; i++) {
                 primeniPeriod[i].addEventListener("click", function(e) {
-                    var inputStart = this.previousElementSibling.firstElementChild.children[1].value
-                    var inputEnd = this.previousElementSibling.firstElementChild.nextElementSibling.children[1].value
+                    var inputStart = this.previousElementSibling.previousElementSibling.firstElementChild.nextElementSibling.value
+                    var inputEnd = this.previousElementSibling.firstElementChild.nextElementSibling.value
                     var inputTempPrizemlje = document.querySelector("#zakazivanjePrizemlja")
                     var inputTempPrviSprat = document.querySelector("#zakazivanjePrviSprat")
                     var boxPeriod = this.parentElement
+
+
                     const timeDate = new Date().toJSON();
                     var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
                     var ineerPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje").parentElement.parentElement
@@ -222,30 +216,7 @@
                     }
                 })
             }
-            var prihvatiZ = document.querySelectorAll(".primeniZ");
-            for (var i = 0; i < prihvatiZ.length; i++) {
-                prihvatiZ[i].addEventListener("click", function(e) {
-                    if (this.value == "prizemlje") {
-                        var ineerPrizemlje = document.querySelector("#zakazivanje-temperatura-prizemlje").parentElement.parentElement
-                        ineerPrizemlje.classList.remove("active")
-                        var formTempPrizemlje = document.querySelector("#zakazivanjePrizemljaTemp").parentElement
-                        var formPeriodPrizemlje = document.querySelector("#startP").parentElement.parentElement
-                        console.log(formTempPrizemlje)
-                        console.log(formPeriodPrizemlje)
-                        formTempPrizemlje.submit()
-                        formPeriodPrizemlje.submit()
-                    } else {
-                        var ineerPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat").parentElement.parentElement
-                        ineerPrviSprat.classList.remove("active")
-                        var formTempPrviSprat = document.querySelector("#zakazivanjePrviSpratTemp").parentElement
-                        var formPeriodPrviSprat = document.querySelector("#startPS").parentElement.parentElement
-                        console.log(formTempPrviSprat)
-                        console.log(formPeriodPrviSprat)
-                        formTempPrviSprat.submit()
-                        formPeriodPrviSprat.submit()
-                    }
-                })
-            }
+
             var ponistiZ = document.querySelectorAll(".ponistiZ");
             for (var i = 0; i < prihvati.length; i++) {
                 ponistiZ[i].addEventListener("click", function(e) {
@@ -253,16 +224,21 @@
                     var inputEndPrizemlje = document.querySelector("#endP")
                     var inputStartPrviSprat = document.querySelector("#startPS")
                     var inputEndPrviSprat = document.querySelector("#endPS")
-                    var inputTemp = this.parentElement.previousElementSibling.children[1].firstElementChild
+                    var choice = this.parentElement
+                    var inputTemp = this.parentElement.previousElementSibling
                     if (this.value == "prizemlje") {
                         inputStartPrizemlje.value = ""
                         inputEndPrizemlje.value = ""
-                        inputTemp.value = 10
+
+                        inputTemp.classList.add("display")
+                        choice.classList.add("display")
 
                     } else {
                         inputStartPrviSprat.value = ""
                         inputEndPrviSprat.value = ""
-                        inputTemp.value = 10
+                        inputTemp.classList.add("display")
+                        choice.classList.add("display")
+
                     }
                 })
             }
@@ -292,11 +268,8 @@
         var checkbox = document.querySelectorAll('input[type ="checkbox"]')
         for (var i = 0; i < checkbox.length; i++) {
             checkbox[i].addEventListener("click", function(e) {
-                console.log(this.checked)
-                var stateParagraph = this.parentElement.parentElement.previousElementSibling
+                var stateParagraph = this.parentElement.previousElementSibling
                 var stateParagraphOutside = stateParagraph.parentElement.previousElementSibling.children[1]
-                var form = stateParagraph.nextElementSibling
-                console.log(form)
                 if (this.checked == true) {
                     stateParagraph.innerHTML = "Otvoreno"
                     stateParagraphOutside.innerHTML = "Otvoreno"
@@ -304,7 +277,6 @@
                     stateParagraph.innerHTML = "Zatvoreno"
                     stateParagraphOutside.innerHTML = "Zatvoreno"
                 }
-                form.submit()
             })
         }
     })

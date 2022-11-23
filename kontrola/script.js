@@ -127,9 +127,9 @@ for (var i = 0; i < primeniZ.length; i++) {
             let floor = "prizemlje"
             let temp = this.parentElement.previousElementSibling.children[1].value
             let rawStartPrizemlje = document.querySelector("#startP").value
-            const startPrizemlje = unix(rawStartPrizemlje)
-
-            let endPrizemlje = document.querySelector("#endP").value
+            const startPrizemlje = +new Date(rawStartPrizemlje)
+            let rawEndPrizemlje = document.querySelector("#endP").value
+            const endPrizemlje = +new Date(rawEndPrizemlje)
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
                     console.log(xhr.status);
@@ -151,8 +151,10 @@ for (var i = 0; i < primeniZ.length; i++) {
             xhr.setRequestHeader("Content-Type", "application/json");
             let floor = "Prvi sprat"
             let temp = this.parentElement.previousElementSibling.children[1].value
-            let startPrviSprat = document.querySelector("#startPS").value
-            let endPrviSprat = document.querySelector("#endPS").value
+            let rawStartPrviSprat = document.querySelector("#startPS").value
+            const startPrviSprat = +new Date(rawStartPrviSprat)
+            let rawEndPrviSprat = document.querySelector("#endPS").value
+            const endPrviSprat = +new Date(rawEndPrviSprat)
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
                     console.log(xhr.status);

@@ -22,7 +22,6 @@ for (var i = 0; i < inputR.length; i++) {
         xhr.send(data);
     })
 }
-
 //GREJANJE prizemlje tren temp1
 function runPrizemlje() {
     // Creating Our XMLHttpRequest object 
@@ -44,7 +43,8 @@ function runPrizemlje() {
         // Sending our request 
     xhr.send();
 }
-//GREJANJE prvi sprat tren temp1
+runPrizemlje()
+    //GREJANJE prvi sprat tren temp1
 function runPrviSprat() {
     // Creating Our XMLHttpRequest object 
     var xhr = new XMLHttpRequest();
@@ -58,15 +58,17 @@ function runPrviSprat() {
             if (this.readyState == 4 && this.status == 200) {
                 var trenTempPrviSprat = document.querySelector("#trenutna-temperatura-prvi-sprat")
                 var zakazivanjeTempPrviSprat = document.querySelector("#zakazivanje-temperatura-prvi-sprat")
-                trenTempPrviSprat.innerHTML = this.responseText
-                zakazivanjeTempPrviSprat.innerHTML = this.responseText
-                console.log(this.responseText);
+                trenTempPrviSprat.innerHTML = this.responseText, "°C"
+                zakazivanjeTempPrviSprat.innerHTML = this.responseText, "°C"
             }
         }
         // Sending our request 
     xhr.send();
 }
-////GREJANJE tren 
+runPrviSprat()
+setInterval(runPrizemlje, 10000)
+setInterval(runPrviSprat, 10000)
+    ////GREJANJE tren 
 var prihvati = document.querySelectorAll(".prihvati");
 for (var i = 0; i < prihvati.length; i++) {
     prihvati[i].addEventListener("click", function(e) {
@@ -224,6 +226,35 @@ for (var i = 0; i < ponistiZ.length; i++) {
         }
     })
 }
-setInterval(runPrizemlje, 10000)
-setInterval(runPrviSprat, 10000)
-    //ventilacija
+
+//ventilacija
+var ventilacijaa = document.querySelectorAll('input[type ="checkbox"]')
+for (var i = 0; i < ventilacijaa.length; i++) {
+    ventilacijaa[i].addEventListener("click", function(e) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "/kontrola/prozori");
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        let window = this.id
+        let rawState = this.checked
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+            }
+        };
+        if (rawState) {
+            var state = 1
+        } else {
+            var state = 0
+        }
+        let data = `{
+                "window": "${window}",
+                "state": "${state}"
+
+            }`;
+        console.log(data)
+        xhr.send(data);
+    })
+}
